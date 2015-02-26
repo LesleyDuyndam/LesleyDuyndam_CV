@@ -1,0 +1,21 @@
+{
+  "name": "lesleyDuyndam_cv",
+  "version": "0.0.1",
+  "homepage": "https://github.com/LesleyDuyndam/LesleyDuyndam_CV",
+  "authors": [
+    "Lesley Duyndam <lesleyduyndam@gmail.com>"
+  ],
+  "description": "Small portfolio/CV website",
+  "main": "index.html",
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "jQuery",
+    "CoffeeScript",
+    "SVG"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jQuery": "~2.1.3"
+  }
+}

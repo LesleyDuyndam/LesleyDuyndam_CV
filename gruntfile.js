@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ){
 
     // Project configuration.
     grunt.initConfig({
@@ -7,23 +7,19 @@ module.exports = function(grunt) {
             options: {
                 livereload: true
             },
-            scripts: {
-                files: ['scripts/coffee/**/*.js'],
+            coffee: {
+                files: ['scripts/coffee/**/*.coffee'],
                 tasks: ['coffee']
             },
-            css: {
-                files: '**/*.less',
+            less: {
+                files: ['style/less/**/*.less'],
                 tasks: ['less']
-            },
-            minify: {
-                files: ['scripts/css/**/*.css'],
-                task:  ['cssmin']
             }
         },
         coffee: {
             compile: {
                 files: {
-                    'scripts/javascript/compiled_Coffee.js': ['scripts/coffee/**/*.coffee'] // compile and concat into single file
+                    'scripts/javascript/compiled_coffee.js': ['scripts/coffee/**/*.coffee'] // compile and concat into single file
                 }
             }
         },
@@ -38,11 +34,14 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'style/css',
-                    src: ['style/css/**/*.css', '!*.min.css'],
-                    dest: 'style/css',
+                    src: ['style/css/style.css'],
                     ext: '.min.css'
                 }]
+            }
+        },
+        wiredep: {
+            task: {
+                src: ['index.html']
             }
         }
     });
@@ -51,6 +50,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-wiredep');
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);

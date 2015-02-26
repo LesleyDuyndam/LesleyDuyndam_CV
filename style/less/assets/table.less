@@ -1,0 +1,31 @@
+@import "../init";
+
+table {
+  width: 66%;
+  margin: 50px auto;
+  text-align: left;
+  border-collapse: collapse;
+
+  tr {
+    width: 100%;
+
+    &:nth-child( odd ){
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:last-child( even ){
+      border-bottom: 1px solid rgba( 255, 255, 255, 0.1 );
+    }
+
+    td {
+      border: 0;
+      padding: 15px 20px;
+
+      &:first-child {
+        width: 33%;
+        opacity: 0.6;
+        text-align: right;
+      }
+    }
+  }
+}
