@@ -2,8 +2,8 @@
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -28,8 +28,8 @@ article {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -43,7 +43,7 @@ BODY {
 }
 table {
   width: 66%;
-  margin: 50px auto;
+  margin: 50px auto 80px;
   text-align: left;
   border-collapse: collapse;
 }
@@ -70,8 +70,8 @@ table tr td:first-child {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -97,8 +97,8 @@ address {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -126,8 +126,8 @@ table {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -181,8 +181,8 @@ header nav ul li {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -205,8 +205,8 @@ BODY {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;
@@ -221,13 +221,37 @@ BODY {
 #skills {
   background-color: #e7e2d8;
 }
+#skills h1 {
+  color: #443f35;
+}
 
 .box-shadow {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
 }
 BODY {
-  margin: 0;
-  padding: 100px 0 0;
+  margin: 100px 0 0 0;
+  padding: 0;
+  font-family: "Convergence", sans-serif;
+  background-color: #7cb0a9;
+  color: #443f35;
+}
+.article-width {
+  width: 80%;
+  padding: 0 10%;
+}
+#container {
+  width: 100%;
+}
+#work {
+  background-color: #443f35;
+}
+
+.box-shadow {
+  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+}
+BODY {
+  margin: 100px 0 0 0;
+  padding: 0;
   font-family: "Convergence", sans-serif;
   background-color: #7cb0a9;
   color: #443f35;

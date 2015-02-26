@@ -5,10 +5,17 @@
 
 # If the DOM is ready
   $( document ).ready ->
+
+    article   = $( ' article ' )
+
+
+
+
     $.fn.adjustHeight = () ->
-      return this.each ( index, object ) ->
-        height = ( window.innerHeight - ( window.innerHeight / 3 ) ) - parseInt( $( ' header ' ).css( 'height' ) )
+      this.each ( index, object ) ->
+        height = ( window.innerHeight - ( window.innerHeight / 5 ) ) - parseInt( $( ' header ' ).css( 'height' ) )
         $( object ).css( 'min-height', height )
+
 
 
 
@@ -28,32 +35,22 @@
 
         parent.innerHeight = parent.height - ( parent.margin + parent.padding )
 
-        console.log( child[ index ].height )
-
-        marginTop = ( parent.innerHeight - child[ index ].height ) / 2
-
-        console.log( marginTop )
-
-        child.css( 'margin-top', marginTop )
+        child.css( 'margin-top', ( parent.innerHeight - child[ index ].height ) / 2 )
 
 
 
 
 
-
-    article   = $( ' article ' )
-    toMiddle  = $( ' .to-middle ' )
 
 
     article.adjustHeight()
 
-    $( ' img ' ).load ->
-      toMiddle.pullToMiddle()
+    $( ' img#intro-img ' ).load ->
+      $( this ).pullToMiddle()
 
 
     $( window ).resize ->
       article.adjustHeight()
-      toMiddle.pullToMiddle()
-
+      $( ' img#intro-img ' ).pullToMiddle()
 
 ) jQuery
