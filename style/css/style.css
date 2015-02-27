@@ -41,6 +41,24 @@ BODY {
 #container {
   width: 100%;
 }
+
+.box-shadow {
+  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+}
+BODY {
+  margin: 100px 0 0 0;
+  padding: 0;
+  font-family: "Convergence", sans-serif;
+  background-color: #7cb0a9;
+  color: #443f35;
+}
+.article-width {
+  width: 80%;
+  padding: 0 10%;
+}
+#container {
+  width: 100%;
+}
 table {
   width: 66%;
   margin: 50px auto 80px;
@@ -288,6 +306,14 @@ BODY {
 }
 #skills h1 {
   color: #443f35;
+}
+#skills span {
+  display: block;
+  width: 100%;
+}
+#skills .wrapper {
+  width: 33%;
+  display: inline-block;
 }
 
 .box-shadow {
