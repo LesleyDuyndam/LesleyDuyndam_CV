@@ -65,6 +65,9 @@ table tr td:first-child {
   opacity: 0.6;
   text-align: right;
 }
+.extended td {
+  padding: 25px 20px;
+}
 
 .box-shadow {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
@@ -91,6 +94,31 @@ address {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-style: normal;
+}
+table td {
+  vertical-align: top;
+}
+table h1 {
+  display: inline-block;
+  font-family: "Convergence", sans-serif;
+  font-size: 1em;
+  margin: 0 auto 5px;
+}
+table h1 a {
+  text-decoration: none;
+  font-style: normal;
+}
+table h2 {
+  display: inline-block;
+  margin: 0 auto 5px 5px;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+table h3 {
+  display: inline-block;
+  margin: 5px auto;
+  font-size: 0.8em;
+  font-weight: 100;
 }
 
 .box-shadow {
@@ -120,6 +148,22 @@ a,
 p,
 table {
   color: #e7e2d8;
+}
+.github {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #443f35;
+}
+.github img {
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.github span {
+  margin-top: 2px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .box-shadow {
@@ -199,6 +243,27 @@ BODY {
 }
 #intro img {
   width: 33%;
+}
+
+.box-shadow {
+  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+}
+BODY {
+  margin: 100px 0 0 0;
+  padding: 0;
+  font-family: "Convergence", sans-serif;
+  background-color: #7cb0a9;
+  color: #443f35;
+}
+.article-width {
+  width: 80%;
+  padding: 0 10%;
+}
+#container {
+  width: 100%;
+}
+#portfolio {
+  background-color: #443f35;
 }
 
 .box-shadow {
