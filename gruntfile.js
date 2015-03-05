@@ -8,25 +8,28 @@ module.exports = function( grunt ){
                 livereload: true
             },
             coffee: {
-                files: ['scripts/coffee/**/*.coffee'],
+                files: ['src/scripts/coffee/**/*.coffee'],
                 tasks: ['coffee']
             },
             less: {
-                files: ['style/less/**/*.less'],
+                files: ['src/style/less/**/*.less'],
                 tasks: ['less']
             }
         },
         coffee: {
             compile: {
                 files: {
-                    'scripts/javascript/compiled_coffee.js': ['scripts/coffee/**/*.coffee'] // compile and concat into single file
+                    'dist/scripts/assets.js': 'src/scripts/coffee/assets/**/*.coffee',
+                    'dist/scripts/classes.js': 'src/scripts/coffee/classes/**/*.coffee',
+                    'dist/scripts/modules.js': 'src/scripts/coffee/modules/**/*.coffee',
+                    'dist/scripts/main.js': 'src/scripts/coffee/main.coffee'
                 }
             }
         },
         less: {
             development: {
                 files: {
-                    "style/css/style.css": "style/less/**/*.less"
+                    "dist/styles/style.css": "src/style/less/**/*.less"
                 }
             }
         },
@@ -34,14 +37,14 @@ module.exports = function( grunt ){
             target: {
                 files: [{
                     expand: true,
-                    src: ['style/css/style.css'],
+                    src: ['dist/styles/style.css'],
                     ext: '.min.css'
                 }]
             }
         },
         wiredep: {
             task: {
-                src: ['index.html']
+                src: ['dist/index.html']
             }
         }
     });
