@@ -63,6 +63,26 @@ BODY {
 .mobile header nav ul li:last-child a {
   padding: 20px 0 40px 0;
 }
+.mobile article {
+  padding: 100px 0;
+}
+.mobile article:first-child {
+  padding: 300px 0 200px;
+}
+.mobile article table {
+  margin: 0;
+  width: 100%;
+}
+.mobile article .github {
+  margin-top: 100px;
+}
+.mobile #skills {
+  text-align: center;
+}
+.mobile #skills .wrapper {
+  display: inline-block;
+  width: 66%;
+}
 
 .box-shadow {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
@@ -357,7 +377,8 @@ BODY {
   width: 100%;
 }
 #skills .wrapper {
-  width: 33%;
+  width: 30%;
+  padding: 20px 1.5%;
   display: inline-block;
 }
 
