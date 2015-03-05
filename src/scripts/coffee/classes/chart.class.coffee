@@ -2,9 +2,21 @@
 root = exports ? this
 
 class root.CHART
-  constructor: ( @parent, @width, @height, @ringColor, @label, @total = 100 ) ->
-    @value    = -1;
-    @finished = false;
+  constructor: ( @parent, @label, params ) ->
+
+    @animate    = params.animate || false
+    @speed      = params.speed || 1
+    @stroke     = params.stroke || 10
+    @total      = params.total || 100
+    @ringColor  = params.ringColor || 'rgba( 0, 0, 0, 1)'
+
+    console.log @speed
+    console.log @stroke
+    console.log @total
+    console.log @ringColor
+
+    @value      = -@speed;
+    @finished   = false;
 
 
 
@@ -17,8 +29,12 @@ class root.CHART
     wrapper = document.getElementById( @parent ).appendChild( wrapper )
 
 #   Check if @width = true
-    @width = wrapper.clientWidth if @width
-    @height = wrapper.clientWidth if @height
+
+    if params.width == undefined
+      @width = wrapper.clientWidth
+
+    if params.height == undefined
+      @height = wrapper.clientWidth
 
     Raphael.prototype.center =  {
       x : this.width / 2,
@@ -41,7 +57,7 @@ class root.CHART
     @ring = @paper.path( @path )
     #    Draw the path
     @ring.attr( 'stroke', @ringColor )
-    @ring.attr( 'stroke-width', @paper.width / 5 )
+    @ring.attr( 'stroke-width', ( @paper.width / 100 ) * @stroke )
 
 #    Draw the centered text
     @svgText = @paper.text( @paper.center.x, @paper.center.y, @label.text ).attr({
@@ -56,11 +72,12 @@ class root.CHART
   createPath: () ->
 
 #   Keep track of the charts progress during the animation
-    if( @value < @label.value )
+    if( @animate && @value < @label.value )
 #     Chart is not finished animating, update the value
-      @value++
+      @value += @speed
     else
 #     Chart is finished animating, flag as finished
+      @value = @label.value
       @finished = true
 
     @alpha = 360 / @total * @value

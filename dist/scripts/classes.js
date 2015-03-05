@@ -4,24 +4,29 @@
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   root.CHART = (function() {
-    function CHART(parent, width, height, ringColor, label, total) {
+    function CHART(parent, label, params) {
       var wrapper;
       this.parent = parent;
-      this.width = width;
-      this.height = height;
-      this.ringColor = ringColor;
       this.label = label;
-      this.total = total != null ? total : 100;
-      this.value = -1;
+      this.animate = params.animate || false;
+      this.speed = params.speed || 1;
+      this.stroke = params.stroke || 10;
+      this.total = params.total || 100;
+      this.ringColor = params.ringColor || 'rgba( 0, 0, 0, 1)';
+      console.log(this.speed);
+      console.log(this.stroke);
+      console.log(this.total);
+      console.log(this.ringColor);
+      this.value = -this.speed;
       this.finished = false;
       wrapper = document.createElement('div');
       wrapper.classList.add('wrapper');
       wrapper.classList.add(this.label.text);
       wrapper = document.getElementById(this.parent).appendChild(wrapper);
-      if (this.width) {
+      if (params.width === void 0) {
         this.width = wrapper.clientWidth;
       }
-      if (this.height) {
+      if (params.height === void 0) {
         this.height = wrapper.clientWidth;
       }
       Raphael.prototype.center = {
@@ -37,7 +42,7 @@
       this.createPath();
       this.ring = this.paper.path(this.path);
       this.ring.attr('stroke', this.ringColor);
-      this.ring.attr('stroke-width', this.paper.width / 5);
+      this.ring.attr('stroke-width', (this.paper.width / 100) * this.stroke);
       this.svgText = this.paper.text(this.paper.center.x, this.paper.center.y, this.label.text).attr({
         "font-size": this.radius * 0.2,
         "fill": 'rgba( 68, 63, 53, 1)',
@@ -46,9 +51,10 @@
     }
 
     CHART.prototype.createPath = function() {
-      if (this.value < this.label.value) {
-        this.value++;
+      if (this.animate && this.value < this.label.value) {
+        this.value += this.speed;
       } else {
+        this.value = this.label.value;
         this.finished = true;
       }
       this.alpha = 360 / this.total * this.value;

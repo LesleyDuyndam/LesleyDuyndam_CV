@@ -18,23 +18,33 @@ labels = [
 @animationStarted = false;
 @animationContainer = document.getElementById( 'skills' )
 @animationTrigger = {
-  top: @animationContainer.offsetTop + 50,
-  bottom: @animationContainer.nextElementSibling.offsetTop + 50
+  top: @animationContainer.offsetTop,
+  bottom: @animationContainer.nextElementSibling.offsetTop
 }
 
+if( device.mobile() )
+  for label in labels
+    @charts.push( new root.CHART( 'chart-wrapper', label, {
+      stroke    : 5
+      ringColor : 'rgba(68, 63, 53, 1)'
+    }))
+else
+  for label in labels
+    @charts.push( new root.CHART( 'chart-wrapper', label, {
+      animate   : true
+      speed     : 2
+      stroke    : 5
+      ringColor : 'rgba(68, 63, 53, 1)'
+    }))
 
+  animation.addTickEvent ->
+    active = false
 
-for label in labels
-  @charts.push( new root.CHART 'skills', true, true, 'rgba(68, 63, 53, 1)', label )
+    for char in @charts
+      active = active || char.animatePath()
 
-animation.addTickEvent ->
-  active = false
-
-  for char in @charts
-    active = active || char.animatePath()
-
-  if( !active )
-    animation.pause()
+    if( !active )
+      animation.pause()
 
 
 

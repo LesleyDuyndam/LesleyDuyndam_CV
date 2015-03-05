@@ -1,5 +1,5 @@
 (function() {
-  var animation, i, label, labels, len, root, scroll;
+  var animation, i, j, label, labels, len, len1, root, scroll;
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -45,27 +45,41 @@
   this.animationContainer = document.getElementById('skills');
 
   this.animationTrigger = {
-    top: this.animationContainer.offsetTop + 50,
-    bottom: this.animationContainer.nextElementSibling.offsetTop + 50
+    top: this.animationContainer.offsetTop,
+    bottom: this.animationContainer.nextElementSibling.offsetTop
   };
 
-  for (i = 0, len = labels.length; i < len; i++) {
-    label = labels[i];
-    this.charts.push(new root.CHART('skills', true, true, 'rgba(68, 63, 53, 1)', label));
+  if (device.mobile()) {
+    for (i = 0, len = labels.length; i < len; i++) {
+      label = labels[i];
+      this.charts.push(new root.CHART('chart-wrapper', label, {
+        stroke: 5,
+        ringColor: 'rgba(68, 63, 53, 1)'
+      }));
+    }
+  } else {
+    for (j = 0, len1 = labels.length; j < len1; j++) {
+      label = labels[j];
+      this.charts.push(new root.CHART('chart-wrapper', label, {
+        animate: true,
+        speed: 2,
+        stroke: 5,
+        ringColor: 'rgba(68, 63, 53, 1)'
+      }));
+    }
+    animation.addTickEvent(function() {
+      var active, char, k, len2, ref;
+      active = false;
+      ref = this.charts;
+      for (k = 0, len2 = ref.length; k < len2; k++) {
+        char = ref[k];
+        active = active || char.animatePath();
+      }
+      if (!active) {
+        return animation.pause();
+      }
+    });
   }
-
-  animation.addTickEvent(function() {
-    var active, char, j, len1, ref;
-    active = false;
-    ref = this.charts;
-    for (j = 0, len1 = ref.length; j < len1; j++) {
-      char = ref[j];
-      active = active || char.animatePath();
-    }
-    if (!active) {
-      return animation.pause();
-    }
-  });
 
   scroll.addEvent(function() {
     if (window.pageYOffset > this.animationTrigger.top && window.pageYOffset < this.animationTrigger.bottom && !this.animationStarted) {
