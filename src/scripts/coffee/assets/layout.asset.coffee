@@ -1,4 +1,4 @@
-#work save with jQuery Hoppa
+#work save with jQuery
 
 (( $ ) ->
 
