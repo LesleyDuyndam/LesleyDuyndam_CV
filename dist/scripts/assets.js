@@ -1,8 +1,7 @@
 (function() {
   (function($) {
     return $(document).ready(function() {
-      var article;
-      article = $(' article ');
+      var intro;
       $.fn.adjustHeight = function() {
         return this.each(function(index, object) {
           var height;
@@ -24,12 +23,13 @@
           return child.css('margin-top', (parent.innerHeight - child[index].height) / 2);
         });
       };
-      article.adjustHeight();
+      intro = $(' article#intro ');
+      intro.adjustHeight();
       $(' img#intro-img ').load(function() {
         return $(this).pullToMiddle();
       });
       return $(window).resize(function() {
-        article.adjustHeight();
+        intro.adjustHeight();
         return $(' img#intro-img ').pullToMiddle();
       });
     });

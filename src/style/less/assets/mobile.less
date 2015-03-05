@@ -1,0 +1,44 @@
+@import "../init";
+
+.mobile {
+
+  header {
+
+    nav {
+      width: 100%;
+      padding: 0;
+
+      #burger {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: @color_white;
+
+        li {
+          display: block;
+          
+          a {
+            display: block;
+            padding: 20px 0;
+          }
+
+          &:last-child {
+
+            a {
+              padding: 20px 0 40px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

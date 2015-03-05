@@ -6,20 +6,11 @@
 # If the DOM is ready
   $( document ).ready ->
 
-    article   = $( ' article ' )
-
-
-
 
     $.fn.adjustHeight = () ->
       this.each ( index, object ) ->
         height = ( window.innerHeight - ( window.innerHeight / 5 ) ) - parseInt( $( ' header ' ).css( 'height' ) )
         $( object ).css( 'min-height', height )
-
-
-
-
-
 
 
     $.fn.pullToMiddle = () ->
@@ -39,18 +30,17 @@
 
 
 
+#    Give the intro div the height of the window
+    intro   = $( ' article#intro ' )
+    intro.adjustHeight()
 
-
-
-
-    article.adjustHeight()
 
     $( ' img#intro-img ' ).load ->
       $( this ).pullToMiddle()
 
 
     $( window ).resize ->
-      article.adjustHeight()
+      intro.adjustHeight()
       $( ' img#intro-img ' ).pullToMiddle()
 
 ) jQuery
