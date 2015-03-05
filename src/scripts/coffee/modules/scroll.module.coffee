@@ -12,5 +12,5 @@ class root.SCROLL
 
   listen: () ->
     parent = @
-    window.addEventListener 'scroll', ( event ) ->
+    window.addEventListener 'scroll', () ->
       callback() for callback in parent.events

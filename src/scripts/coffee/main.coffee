@@ -4,15 +4,15 @@ animation = new root.LOOP()
 scroll = new root.SCROLL()
 
 labels = [
-  { text : 'HTML5',  value : 90 },
-  { text : 'CSS', value : 85},
-  { text : 'JavaScript',  value : 80 },
-  { text : 'CoffeeScript', value : 70},
-  { text : 'NodeJS', value : 50},
-  { text : 'AngularJS',  value : 50 },
-  { text : 'jQuery', value : 70},
-  { text : 'Wordpress', value : 75},
-  { text : 'Illustrator', value : 85},
+  { text: 'HTML5', value: 90 },
+  { text: 'CSS', value: 85 },
+  { text: 'JavaScript', value: 83 },
+  { text: 'Illustrator', value: 80 },
+  { text: 'CoffeeScript', value: 75 },
+  { text: 'jQuery', value: 70 },
+  { text: 'Wordpress', value: 65 },
+  { text: 'AngularJS', value: 45 },
+  { text: 'NodeJS', value: 40 }
 ]
 @charts = []
 @animationStarted = false;
@@ -39,24 +39,8 @@ animation.addTickEvent ->
 
 
 scroll.addEvent ->
-  if( window.pageYOffset > @animationTrigger.top && window.pageYOffset < @animationTrigger.bottom && !@animationStarted  )
+  if( window.pageYOffset > @animationTrigger.top && window.pageYOffset < @animationTrigger.bottom && !@animationStarted )
     animation.play()
     @animationStarted = true
 
 scroll.listen()
-
-
-#
-#animation.addTickEvent ->
-#  active = false
-#
-#  for char in @charts
-#    if( char.createPath()  )
-#      char.ring.attr( 'path', char.path )
-#      active = true
-#
-#  if ( !active )
-#    animation.pause()
-
-#animation.play()
-
