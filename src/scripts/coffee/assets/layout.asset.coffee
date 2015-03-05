@@ -30,17 +30,17 @@
 
 
 
-#    Give the intro div the height of the window
-    intro   = $( ' article#intro ' )
-    intro.adjustHeight()
 
 
-    $( ' img#intro-img ' ).load ->
-      $( this ).pullToMiddle()
-
-
-    $( window ).resize ->
+    if( !device.mobile() )
+      intro   = $( ' article#intro ' )
       intro.adjustHeight()
-      $( ' img#intro-img ' ).pullToMiddle()
+
+      $( ' img#intro-img ' ).load ->
+        $( this ).pullToMiddle()
+
+      $( window ).resize ->
+        intro.adjustHeight()
+        $( ' img#intro-img ' ).pullToMiddle()
 
 ) jQuery

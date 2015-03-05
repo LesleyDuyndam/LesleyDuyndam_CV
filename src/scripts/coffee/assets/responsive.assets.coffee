@@ -15,10 +15,9 @@
           id: 'burger'
         })
 
-      $( ' #nav ' ).append( burger )
+      burger = $( ' #nav ' ).append( burger )
 
-
-
-
+      burger.click () ->
+        $( ' #nav ul ' ).toggleClass( 'show' )
 
 ) jQuery

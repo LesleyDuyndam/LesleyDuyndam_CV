@@ -23,15 +23,17 @@
           return child.css('margin-top', (parent.innerHeight - child[index].height) / 2);
         });
       };
-      intro = $(' article#intro ');
-      intro.adjustHeight();
-      $(' img#intro-img ').load(function() {
-        return $(this).pullToMiddle();
-      });
-      return $(window).resize(function() {
+      if (!device.mobile()) {
+        intro = $(' article#intro ');
         intro.adjustHeight();
-        return $(' img#intro-img ').pullToMiddle();
-      });
+        $(' img#intro-img ').load(function() {
+          return $(this).pullToMiddle();
+        });
+        return $(window).resize(function() {
+          intro.adjustHeight();
+          return $(' img#intro-img ').pullToMiddle();
+        });
+      }
     });
   })(jQuery);
 
@@ -52,7 +54,10 @@
           src: 'images/icons/burger.svg',
           id: 'burger'
         });
-        return $(' #nav ').append(burger);
+        burger = $(' #nav ').append(burger);
+        return burger.click(function() {
+          return $(' #nav ul ').toggleClass('show');
+        });
       }
     });
   })(jQuery);
