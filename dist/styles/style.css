@@ -76,6 +76,12 @@ BODY {
   margin: 0;
   width: 100%;
 }
+.mobile article table td {
+  padding: 15px 10px;
+}
+.mobile article table td:first-child {
+  width: 33%;
+}
 .mobile article .github {
   margin-top: 100px;
 }
@@ -85,6 +91,9 @@ BODY {
 .mobile #skills .wrapper {
   display: inline-block;
   width: 66%;
+}
+.mobile .internships {
+  margin-top: 100px;
 }
 
 .box-shadow {
@@ -225,7 +234,12 @@ table h3 {
 }
 .mobile table,
 .tablet .portrait table {
-  font-size: 0.8em;
+  font-size: 0.7em;
+}
+.mobile article > h1,
+.tablet .portrait article > h1 {
+  font-size: 1.3em;
+  margin-bottom: 75px;
 }
 
 .box-shadow {
