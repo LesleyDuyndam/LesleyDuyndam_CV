@@ -47,18 +47,30 @@
 (function() {
   (function($) {
     return $(document).ready(function() {
-      var burger;
-      if (device.mobile() || device.tablet() && device.portrait()) {
-        console.log('Device = mobile');
-        burger = $(' <img></img> ').attr({
-          src: 'images/icons/burger.svg',
-          id: 'burger'
-        });
-        burger = $(' #nav ').append(burger);
-        return burger.click(function() {
-          return $(' #nav ul ').toggleClass('show');
-        });
-      }
+      var addBurger;
+      addBurger = function() {
+        var burger;
+        if (device.mobile() || device.tablet()) {
+          if ($(' #burger ').length === 0) {
+            burger = $(' <img></img> ').attr({
+              src: 'images/icons/burger.svg',
+              id: 'burger'
+            });
+            burger = $(' #nav ').append(burger);
+          } else {
+            burger = $(' #burger ');
+          }
+          return burger.click(function() {
+            return $(' #nav ul ').toggleClass('show');
+          });
+        } else {
+          return $(' #burger ').remove();
+        }
+      };
+      addBurger();
+      return window.addEventListener('orientationchange', function(e) {
+        return addBurger();
+      });
     });
   })(jQuery);
 
