@@ -152,28 +152,12 @@
 </section>
 
 <footer>
-    <ul id="showClasses"></ul>
-    <button id="getClasses"> Get the body classes! </button>
     <script src="scripts/bower/raphael/raphael.js"></script>
 
     <script src="scripts/assets.js"></script>
     <script src="scripts/classes.js"></script>
     <script src="scripts/modules.js"></script>
     <script src="scripts/main.js"></script>
-
-    <script>
-
-        $(' #getClasses ').click( function(){
-
-            var list = $(' html ')[0].classList;
-
-            for( var i = 0; i < list.length; i++ ){
-                $(' #showClasses').append( '<li>' + list[i] + '</li>' );
-            }
-
-        });
-
-    </script>
 </footer>
 
 </body>
