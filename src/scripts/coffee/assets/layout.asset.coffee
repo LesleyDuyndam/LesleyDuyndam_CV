@@ -1,4 +1,4 @@
-#work save with jQuery Hoppa
+#work save with jQuery
 
 (( $ ) ->
 
@@ -6,20 +6,11 @@
 # If the DOM is ready
   $( document ).ready ->
 
-    article   = $( ' article ' )
-
-
-
 
     $.fn.adjustHeight = () ->
       this.each ( index, object ) ->
         height = ( window.innerHeight - ( window.innerHeight / 5 ) ) - parseInt( $( ' header ' ).css( 'height' ) )
         $( object ).css( 'min-height', height )
-
-
-
-
-
 
 
     $.fn.pullToMiddle = () ->
@@ -41,16 +32,15 @@
 
 
 
+    if( !device.mobile() )
+      intro   = $( ' article#intro ' )
+      intro.adjustHeight()
 
+      $( ' img#intro-img ' ).load ->
+        $( this ).pullToMiddle()
 
-    article.adjustHeight()
-
-    $( ' img#intro-img ' ).load ->
-      $( this ).pullToMiddle()
-
-
-    $( window ).resize ->
-      article.adjustHeight()
-      $( ' img#intro-img ' ).pullToMiddle()
+      $( window ).resize ->
+        intro.adjustHeight()
+        $( ' img#intro-img ' ).pullToMiddle()
 
 ) jQuery

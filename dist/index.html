@@ -22,22 +22,23 @@
     <link rel="stylesheet" href="styles/style.css"/>
 
     <script src="scripts/bower/modernizr/modernizr.js"></script>
+    <script src="scripts/bower/devicejs/lib/device.js"></script>
     <script src="scripts/bower/jQuery/dist/jquery.js"></script>
 
 </head>
 
 <body>
 <header>
-<nav>
-    <a href="#intro" class="title"><img src="images/LesleyDuyndam_dark_head.svg" alt="Icon Lesley Duyndam"/>Lesley Duyndam</a>
-    <ul>
-        <li><a href="#about-me">About me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <!--<li><a href="#portfolio">Portfolio</a></li>-->
-        <li><a href="#education">Education</a></li>
-        <li><a href="#work">Work</a></li>
-    </ul>
-</nav>
+    <nav id="nav">
+        <a href="#intro" id="title" class="title"><img src="images/LesleyDuyndam_dark_head.svg" alt="Icon Lesley Duyndam"/>Lesley Duyndam</a>
+        <ul>
+            <li><a href="#about-me">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <!--<li><a href="#portfolio">Portfolio</a></li>-->
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Work</a></li>
+        </ul>
+    </nav>
 </header>
 
 <section id="container">
@@ -80,6 +81,9 @@
     </article>
     <article id="skills">
         <h1>Skills</h1>
+        <div id="chart-wrapper">
+
+        </div>
     </article>
     <!--<article id="portfolio">-->
         <!--<h1>Portfolio</h1>-->
@@ -124,7 +128,7 @@
             </tr>
         </table>
 
-        <h1>Internships</h1>
+        <h1 class="internships">Internships</h1>
         <table class="extended">
             <tr>
                 <td>2008</td>

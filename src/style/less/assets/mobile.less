@@ -1,0 +1,90 @@
+@import "../init";
+
+.mobile {
+  header {
+    nav {
+      width: 100%;
+      padding: 0;
+
+      a#title {
+        padding: 20px 10px;
+      }
+
+      #burger {
+        position: fixed;
+        top: 20px;
+        right: 15px;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        height: 1px;
+        width: 100%;
+        text-align: center;
+        background-color: @color_white;
+        overflow: hidden;
+
+        transition: 0.4s height;
+
+        &.show{
+          height: auto;
+        }
+
+        li {
+          display: block;
+          
+          a {
+            display: block;
+            padding: 20px 0;
+          }
+
+          &:last-child {
+
+            a {
+              padding: 20px 0 40px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  article {
+    padding: 100px 0;
+
+    &:first-child {
+      padding: 300px 0 200px;
+    }
+
+    table {
+      margin: 0;
+      width: 100%;
+
+      td {
+        padding: 15px 10px;
+
+        &:first-child {
+          width: 33%;
+        }
+      }
+    }
+
+    .github {
+      margin-top: 100px;
+    }
+  }
+
+  #skills {
+    text-align: center;
+
+    .wrapper {
+      display: inline-block;
+      width: 66%;
+    }
+  }
+
+  .internships {
+    margin-top: 100px;
+  }
+}
