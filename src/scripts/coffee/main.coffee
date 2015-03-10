@@ -7,7 +7,7 @@
   animation = root.loop
   scroll = root.scroll
 
-  $(".live-tile").liveTile()
+#  $(".live-tile").liveTile()
 
 # Give the data for the animated donut charts
   labels = [
