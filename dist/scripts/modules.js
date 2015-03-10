@@ -5,39 +5,6 @@
 
 
   /*
-    Event Handler class
-   */
-
-  root.EVENT_HANDLER = (function() {
-    function EVENT_HANDLER() {}
-
-    EVENT_HANDLER.prototype.construct = function() {
-      this.callbacks = [];
-      this.index = [];
-      return this.stats = {
-        'counter': 0,
-        'startTime': null,
-        'lastTime': null
-      };
-    };
-
-    EVENT_HANDLER.prototype.register = function(callback) {
-      return this.callbacks.push(callback);
-    };
-
-    return EVENT_HANDLER;
-
-  })();
-
-}).call(this);
-
-(function() {
-  var root;
-
-  root = typeof exports !== "undefined" && exports !== null ? exports : this;
-
-
-  /*
     LOOP class
    */
 

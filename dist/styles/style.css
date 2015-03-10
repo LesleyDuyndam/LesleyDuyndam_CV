@@ -31,21 +31,26 @@ BODY {
 #container {
   width: 100%;
 }
-.mobile header nav {
+html.mobile header nav,
+html.tablet.portrait header nav {
   width: 100%;
   padding: 0;
 }
-.mobile header nav a#title {
+html.mobile header nav a#title,
+html.tablet.portrait header nav a#title {
   padding: 20px 10px;
 }
-.mobile header nav #burger {
+html.mobile header nav #burger,
+html.tablet.portrait header nav #burger {
   position: fixed;
+  display: block;
   top: 20px;
   right: 15px;
   margin: 0;
   padding: 0;
 }
-.mobile header nav ul {
+html.mobile header nav ul,
+html.tablet.portrait header nav ul {
   height: 1px;
   width: 100%;
   text-align: center;
@@ -53,46 +58,50 @@ BODY {
   overflow: hidden;
   transition: 0.4s height;
 }
-.mobile header nav ul.show {
+html.mobile header nav ul.show,
+html.tablet.portrait header nav ul.show {
   height: auto;
 }
-.mobile header nav ul li {
+html.mobile header nav ul li,
+html.tablet.portrait header nav ul li {
   display: block;
 }
-.mobile header nav ul li a {
+html.mobile header nav ul li a,
+html.tablet.portrait header nav ul li a {
   display: block;
   padding: 20px 0;
 }
-.mobile header nav ul li:last-child a {
+html.mobile header nav ul li:last-child a,
+html.tablet.portrait header nav ul li:last-child a {
   padding: 20px 0 40px 0;
 }
-.mobile article {
+html.mobile article {
   padding: 100px 0;
 }
-.mobile article:first-child {
+html.mobile article:first-child {
   padding: 300px 0 200px;
 }
-.mobile article table {
+html.mobile article table {
   margin: 0;
   width: 100%;
 }
-.mobile article table td {
+html.mobile article table td {
   padding: 15px 10px;
 }
-.mobile article table td:first-child {
+html.mobile article table td:first-child {
   width: 33%;
 }
-.mobile article .github {
+html.mobile article .github {
   margin-top: 100px;
 }
-.mobile #skills {
+html.mobile #skills {
   text-align: center;
 }
-.mobile #skills .wrapper {
+html.mobile #skills .wrapper {
   display: inline-block;
   width: 66%;
 }
-.mobile .internships {
+html.mobile .internships {
   margin-top: 100px;
 }
 
@@ -332,6 +341,9 @@ header nav ul {
 header nav ul li {
   display: inline-block;
 }
+header nav #burger {
+  display: none;
+}
 
 .box-shadow {
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
@@ -351,6 +363,11 @@ BODY {
 }
 #intro img {
   width: 33%;
+  margin: 12% auto;
+  max-width: 400px;
+}
+.tablet.landscape #intro img {
+  margin: 3% auto;
 }
 
 .box-shadow {
@@ -392,6 +409,10 @@ BODY {
 #skills span {
   display: block;
   width: 100%;
+}
+#skills #chart-wrapper {
+  max-width: 1240px;
+  margin: auto;
 }
 #skills .wrapper {
   width: 29%;
