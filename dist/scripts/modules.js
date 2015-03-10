@@ -1,19 +1,26 @@
 (function() {
-  var root;
+  var LOOP, root;
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
 
   /*
-    LOOP class
+    LOOP module class
+      - A module will be instantiated only once
    */
 
-  root.LOOP = (function() {
+  LOOP = (function() {
     function LOOP() {
-      this.running = false;
       this.counter = 0;
       this.events = [];
     }
+
+
+    /*
+    Check if the loop is st
+     */
+
+    LOOP.prototype.running = false;
 
 
     /*
@@ -78,19 +85,22 @@
 
   })();
 
+  root.loop = new LOOP();
+
 }).call(this);
 
 (function() {
-  var root;
+  var SCROLL, root;
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
 
   /*
-    SCROLL class
+    SCROLL module class
+    - A module will be instantiated only once
    */
 
-  root.SCROLL = (function() {
+  SCROLL = (function() {
     function SCROLL() {
       this.events = [];
     }
@@ -117,5 +127,7 @@
     return SCROLL;
 
   })();
+
+  root.scroll = new SCROLL();
 
 }).call(this);

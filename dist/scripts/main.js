@@ -2,8 +2,9 @@
   (function($) {
     var animation, i, j, label, labels, len, len1, root, scroll;
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
-    animation = new root.LOOP();
-    scroll = new root.SCROLL();
+    animation = root.loop;
+    scroll = root.scroll;
+    $(".live-tile").liveTile();
     labels = [
       {
         text: 'HTML5',
@@ -60,14 +61,14 @@
         }));
       }
       animation.addTickEvent(function() {
-        var active, char, k, len2, ref;
-        active = false;
+        var chart, k, len2, ref;
+        animation.running = false;
         ref = this.charts;
         for (k = 0, len2 = ref.length; k < len2; k++) {
-          char = ref[k];
-          active = active || char.animatePath();
+          chart = ref[k];
+          animation.running = animation.running || chart.animatePath();
         }
-        if (!active) {
+        if (!animation.running) {
           return animation.pause();
         }
       });

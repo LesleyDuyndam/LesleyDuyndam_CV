@@ -2,9 +2,14 @@
 (( $ ) ->
   root = exports ? this
 
-  animation = new root.LOOP()
-  scroll = new root.SCROLL()
 
+#  Load Modules
+  animation = root.loop
+  scroll = root.scroll
+
+  $(".live-tile").liveTile()
+
+# Give the data for the animated donut charts
   labels = [
     { text: 'HTML5', value: 90 },
     { text: 'CSS', value: 85 },
@@ -24,6 +29,7 @@
     bottom: @animationContainer.nextElementSibling.offsetTop
   }
 
+# Only animate chart, if device is NOT mobile
   if( device.mobile() )
     for label in labels
       @charts.push( new root.CHART( 'chart-wrapper', label, {
@@ -39,14 +45,20 @@
         ringColor : 'rgba(68, 63, 53, 1)'
       }))
 
+#    Function to call on every new animation tick
+#    Every new tick, active begins false. If a chart is
+#    not finished, it wil set active to true.
+
     animation.addTickEvent ->
-      active = false
+      animation.running = false
 
-      for char in @charts
-        active = active || char.animatePath()
+      for chart in @charts
+        animation.running = animation.running || chart.animatePath()
 
-      if( !active )
+      if( !animation.running )
         animation.pause()
+
+
 
   if( device.mobile() || device.tablet() && device.portrait() )
     $(' #burger ').click () ->
