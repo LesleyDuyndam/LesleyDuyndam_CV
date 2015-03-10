@@ -4,7 +4,6 @@
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
     animation = root.loop;
     scroll = root.scroll;
-    $(".live-tile").liveTile();
     labels = [
       {
         text: 'HTML5',
