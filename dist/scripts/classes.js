@@ -13,10 +13,6 @@
       this.stroke = params.stroke || 10;
       this.total = params.total || 100;
       this.ringColor = params.ringColor || 'rgba( 0, 0, 0, 1)';
-      console.log(this.speed);
-      console.log(this.stroke);
-      console.log(this.total);
-      console.log(this.ringColor);
       this.value = -this.speed;
       this.finished = false;
       wrapper = document.createElement('div');

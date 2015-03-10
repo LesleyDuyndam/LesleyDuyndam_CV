@@ -10,11 +10,6 @@ class root.CHART
     @total      = params.total || 100
     @ringColor  = params.ringColor || 'rgba( 0, 0, 0, 1)'
 
-    console.log @speed
-    console.log @stroke
-    console.log @total
-    console.log @ringColor
-
     @value      = -@speed;
     @finished   = false;
 
@@ -85,7 +80,7 @@ class root.CHART
     @x     = @paper.center.x + @radius * Math.cos(@a)
     @y     = @paper.center.y - @radius * Math.sin(@a)
 
-#   Check if value is the same als the total (Full circle) and export the path
+#   Check if value is the same als the total (a full circle) and export the path
     if ( @total == @label.value )
       @path = [
         ["M", @paper.center.x, @paper.center.y - @radius],
