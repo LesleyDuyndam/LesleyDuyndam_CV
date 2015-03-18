@@ -7,6 +7,7 @@
   animation = root.loop
   scroll = root.scroll
 
+
 # Give the data for the animated donut charts
   labels = [
     { text: 'HTML5', value: 90 },
@@ -60,7 +61,10 @@
 
   if( device.mobile() || device.tablet() && device.portrait() )
     $(' #burger ').click () ->
-      $( ' #nav ul ' ).toggleClass( 'show' )
+      $(' #nav ul ').toggleClass( 'show' )
+      $(' header ').toggleClass( 'show-mobile' )
+
+
 
 
   scroll.addEvent ->
@@ -69,4 +73,25 @@
       @animationStarted = true
 
   scroll.listen()
+
+
+  Scrontroll  = new SCRONTROLL()
+  header      = $(' header ')
+
+  header.addClass( 'show big' )
+
+  Scrontroll.watch 'direction', ( direction ) =>
+
+    if direction isnt undefined
+
+      if direction is 'atTop' or direction is 'atBottom'
+        header.addClass( 'big', 'show' )
+
+      if direction is 'up'
+        header.removeClass( 'big' ).addClass( 'show' )
+
+      if direction is 'down'
+        header.removeClass( 'big' ).removeClass( 'show' )
+
+
 ) jQuery

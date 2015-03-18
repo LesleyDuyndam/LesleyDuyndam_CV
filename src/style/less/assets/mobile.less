@@ -23,15 +23,19 @@ html {
 
         ul {
           height: 1px;
-          width: 100%;
+          width: 90%;
+          margin: 0 5%;
           text-align: center;
           background-color: @color_white;
           overflow: hidden;
+          border-top: 1px solid rgba(100, 100, 100, 0);
 
-          transition: 0.4s height;
+          transition: 400ms;
 
           &.show {
-            height: auto;
+            padding-top: 25px;
+            border-top: 1px solid rgba(100, 100, 100, 0.1);
+            height: 275px;
           }
 
           li {

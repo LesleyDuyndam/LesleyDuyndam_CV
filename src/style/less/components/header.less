@@ -2,12 +2,21 @@
 
 header {
   position: fixed;
-  top: 0;
+  top: -200px;
   width: 100%;
 //  min-height: 100px;
   background-color: @color_white;
   z-index: 10;
   .box-shadow;
+  transition: 500ms;
+
+  &.show-mobile {
+    top: 0 !important;
+  }
+
+  &.show {
+    top: 0;
+  }
 
 
   a {

@@ -1,6 +1,6 @@
 (function() {
   (function($) {
-    var animation, i, j, label, labels, len, len1, root, scroll;
+    var Scrontroll, animation, header, i, j, label, labels, len, len1, root, scroll;
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
     animation = root.loop;
     scroll = root.scroll;
@@ -74,7 +74,8 @@
     }
     if (device.mobile() || device.tablet() && device.portrait()) {
       $(' #burger ').click(function() {
-        return $(' #nav ul ').toggleClass('show');
+        $(' #nav ul ').toggleClass('show');
+        return $(' header ').toggleClass('show-mobile');
       });
     }
     scroll.addEvent(function() {
@@ -83,7 +84,25 @@
         return this.animationStarted = true;
       }
     });
-    return scroll.listen();
+    scroll.listen();
+    Scrontroll = new SCRONTROLL();
+    header = $(' header ');
+    header.addClass('show big');
+    return Scrontroll.watch('direction', (function(_this) {
+      return function(direction) {
+        if (direction !== void 0) {
+          if (direction === 'atTop' || direction === 'atBottom') {
+            header.addClass('big', 'show');
+          }
+          if (direction === 'up') {
+            header.removeClass('big').addClass('show');
+          }
+          if (direction === 'down') {
+            return header.removeClass('big').removeClass('show');
+          }
+        }
+      };
+    })(this));
   })(jQuery);
 
 }).call(this);
