@@ -58,13 +58,14 @@ html.tablet.portrait header nav ul {
   background-color: #e7e2d8;
   overflow: hidden;
   border-top: 1px solid rgba(100, 100, 100, 0);
-  transition: 400ms;
+  transition: 300ms;
 }
 html.mobile header nav ul.show,
 html.tablet.portrait header nav ul.show {
   padding-top: 25px;
   border-top: 1px solid rgba(100, 100, 100, 0.1);
   height: 275px;
+  transition: 150ms;
 }
 html.mobile header nav ul li,
 html.tablet.portrait header nav ul li {
@@ -341,9 +342,11 @@ header {
 }
 header.show-mobile {
   top: 0 !important;
+  transition: 300ms;
 }
 header.show {
   top: 0;
+  transition: 300ms;
 }
 header a {
   padding: 40px 10px;

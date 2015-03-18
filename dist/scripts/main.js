@@ -4,6 +4,29 @@
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
     animation = root.loop;
     scroll = root.scroll;
+    Scrontroll = new SCRONTROLL();
+    header = $(' header ');
+
+    /*
+      Scrontroll.js not finished/ stable enough to replace all scroll events.
+      Although, the (very bare!) stable version is used for detecting scroll direction
+     */
+    header.addClass('show big');
+    Scrontroll.watch('direction', (function(_this) {
+      return function(direction) {
+        if (direction !== void 0) {
+          if (direction === 'atTop' || direction === 'atBottom') {
+            header.addClass('big', 'show');
+          }
+          if (direction === 'up') {
+            header.removeClass('big').addClass('show');
+          }
+          if (direction === 'down') {
+            return header.removeClass('big').removeClass('show');
+          }
+        }
+      };
+    })(this));
     labels = [
       {
         text: 'HTML5',
@@ -74,7 +97,11 @@
     }
     if (device.mobile() || device.tablet() && device.portrait()) {
       $(' #burger ').click(function() {
-        $(' #nav ul ').toggleClass('show');
+        $(' ul#nav-ul ').toggleClass('show');
+        return $(' header ').toggleClass('show-mobile');
+      });
+      $(' ul#nav-ul ').click(function() {
+        $(' ul#nav-ul ').removeClass('show');
         return $(' header ').toggleClass('show-mobile');
       });
     }
@@ -84,25 +111,7 @@
         return this.animationStarted = true;
       }
     });
-    scroll.listen();
-    Scrontroll = new SCRONTROLL();
-    header = $(' header ');
-    header.addClass('show big');
-    return Scrontroll.watch('direction', (function(_this) {
-      return function(direction) {
-        if (direction !== void 0) {
-          if (direction === 'atTop' || direction === 'atBottom') {
-            header.addClass('big', 'show');
-          }
-          if (direction === 'up') {
-            header.removeClass('big').addClass('show');
-          }
-          if (direction === 'down') {
-            return header.removeClass('big').removeClass('show');
-          }
-        }
-      };
-    })(this));
+    return scroll.listen();
   })(jQuery);
 
 }).call(this);
