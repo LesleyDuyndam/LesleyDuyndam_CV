@@ -27,6 +27,16 @@
         }
       };
     })(this));
+    if (device.mobile() || device.tablet() && device.portrait()) {
+      $(' #burger ').click(function() {
+        $(' ul#nav-ul ').toggleClass('show');
+        return header.toggleClass('show-mobile');
+      });
+      $(' ul#nav-ul ').click(function() {
+        $(' ul#nav-ul ').removeClass('show');
+        return header.toggleClass('show-mobile');
+      });
+    }
     labels = [
       {
         text: 'HTML5',
@@ -93,16 +103,6 @@
         if (!animation.running) {
           return animation.pause();
         }
-      });
-    }
-    if (device.mobile() || device.tablet() && device.portrait()) {
-      $(' #burger ').click(function() {
-        $(' ul#nav-ul ').toggleClass('show');
-        return $(' header ').toggleClass('show-mobile');
-      });
-      $(' ul#nav-ul ').click(function() {
-        $(' ul#nav-ul ').removeClass('show');
-        return $(' header ').toggleClass('show-mobile');
       });
     }
     scroll.addEvent(function() {

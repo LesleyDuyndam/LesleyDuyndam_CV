@@ -31,6 +31,16 @@
         header.removeClass( 'big' ).removeClass( 'show' )
 
 
+  if( device.mobile() || device.tablet() && device.portrait() )
+    $(' #burger ').click () ->
+      $(' ul#nav-ul ').toggleClass( 'show' )
+      header.toggleClass( 'show-mobile' )
+
+    $(' ul#nav-ul ').click () ->
+      $(' ul#nav-ul ').removeClass( 'show' )
+      header.toggleClass( 'show-mobile' )
+
+
 
 
 # Give the data for the animated donut charts
@@ -85,17 +95,6 @@
 
       if( !animation.running )
         animation.pause()
-
-
-
-  if( device.mobile() || device.tablet() && device.portrait() )
-    $(' #burger ').click () ->
-      $(' ul#nav-ul ').toggleClass( 'show' )
-      $(' header ').toggleClass( 'show-mobile' )
-
-    $(' ul#nav-ul ').click () ->
-      $(' ul#nav-ul ').removeClass( 'show' )
-      $(' header ').toggleClass( 'show-mobile' )
 
 
 
