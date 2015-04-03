@@ -1,9 +1,42 @@
 (function() {
   (function($) {
-    var animation, i, j, label, labels, len, len1, root, scroll;
+    var Scrontroll, animation, header, i, j, label, labels, len, len1, root, scroll;
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
-    animation = new root.LOOP();
-    scroll = new root.SCROLL();
+    animation = root.loop;
+    scroll = root.scroll;
+    Scrontroll = new SCRONTROLL();
+    header = $(' header ');
+
+    /*
+      Scrontroll.js not finished/ stable enough to replace all scroll events.
+      Although, the (very bare!) stable version is used for detecting scroll direction
+     */
+    header.addClass('show big');
+    Scrontroll.watch('direction', (function(_this) {
+      return function(direction) {
+        if (direction !== void 0) {
+          if (direction === 'atTop' || direction === 'atBottom') {
+            header.addClass('big', 'show');
+          }
+          if (direction === 'up') {
+            header.removeClass('big').addClass('show');
+          }
+          if (direction === 'down') {
+            return header.removeClass('big').removeClass('show');
+          }
+        }
+      };
+    })(this));
+    if (device.mobile() || device.tablet() && device.portrait()) {
+      $(' #burger ').click(function() {
+        $(' ul#nav-ul ').toggleClass('show');
+        return header.toggleClass('show-mobile');
+      });
+      $(' ul#nav-ul ').click(function() {
+        $(' ul#nav-ul ').removeClass('show');
+        return header.toggleClass('show-mobile');
+      });
+    }
     labels = [
       {
         text: 'HTML5',
@@ -60,21 +93,16 @@
         }));
       }
       animation.addTickEvent(function() {
-        var active, char, k, len2, ref;
-        active = false;
+        var chart, k, len2, ref;
+        animation.running = false;
         ref = this.charts;
         for (k = 0, len2 = ref.length; k < len2; k++) {
-          char = ref[k];
-          active = active || char.animatePath();
+          chart = ref[k];
+          animation.running = animation.running || chart.animatePath();
         }
-        if (!active) {
+        if (!animation.running) {
           return animation.pause();
         }
-      });
-    }
-    if (device.mobile() || device.tablet() && device.portrait()) {
-      $(' #burger ').click(function() {
-        return $(' #nav ul ').toggleClass('show');
       });
     }
     scroll.addEvent(function() {

@@ -52,15 +52,20 @@ html.tablet.portrait header nav #burger {
 html.mobile header nav ul,
 html.tablet.portrait header nav ul {
   height: 1px;
-  width: 100%;
+  width: 90%;
+  margin: 0 5%;
   text-align: center;
   background-color: #e7e2d8;
   overflow: hidden;
-  transition: 0.4s height;
+  border-top: 1px solid rgba(100, 100, 100, 0);
+  transition: 300ms;
 }
 html.mobile header nav ul.show,
 html.tablet.portrait header nav ul.show {
-  height: auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+  height: 275px;
+  transition: 150ms;
 }
 html.mobile header nav ul li,
 html.tablet.portrait header nav ul li {
@@ -214,39 +219,43 @@ table h3 {
   font-weight: 100;
 }
 .mobile h1,
-.tablet .portrait h1 {
+.tablet.portrait h1 {
   font-size: 1.2em;
 }
 .mobile h2,
-.tablet .portrait h2 {
+.tablet.portrait h2 {
   font-size: 1.1em;
 }
 .mobile h3,
-.tablet .portrait h3 {
+.tablet.portrait h3 {
   font-size: 1em;
 }
 .mobile h4,
-.tablet .portrait h4 {
+.tablet.portrait h4 {
   font-size: 0.9em;
 }
 .mobile h5,
-.tablet .portrait h5 {
+.tablet.portrait h5 {
   font-size: 0.8em;
 }
 .mobile h6,
-.tablet .portrait h6 {
+.tablet.portrait h6 {
   font-size: 0.8em;
 }
 .mobile p,
-.tablet .portrait p {
+.tablet.portrait p {
   font-size: 0.8em;
 }
 .mobile table,
-.tablet .portrait table {
+.tablet.portrait table {
   font-size: 0.7em;
 }
+.mobile header #title,
+.tablet.portrait header #title {
+  font-size: 1em;
+}
 .mobile article > h1,
-.tablet .portrait article > h1 {
+.tablet.portrait article > h1 {
   font-size: 1.3em;
   margin-bottom: 75px;
 }
@@ -305,13 +314,39 @@ BODY {
 #container {
   width: 100%;
 }
+article#education {
+  background-color: #c26558;
+}
+
+.box-shadow {
+  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+}
+BODY {
+  margin: 0;
+  padding: 0;
+  font-family: "Convergence", sans-serif;
+  background-color: #7cb0a9;
+  color: #443f35;
+}
+#container {
+  width: 100%;
+}
 header {
   position: fixed;
-  top: 0;
+  top: -200px;
   width: 100%;
   background-color: #e7e2d8;
   z-index: 10;
   box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+  transition: 500ms;
+}
+header.show-mobile {
+  top: 0 !important;
+  transition: 300ms;
+}
+header.show {
+  top: 0;
+  transition: 300ms;
 }
 header a {
   padding: 40px 10px;

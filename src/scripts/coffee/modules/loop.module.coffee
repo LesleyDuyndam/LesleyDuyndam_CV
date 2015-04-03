@@ -1,19 +1,30 @@
 root = exports ? this
 ###
-  LOOP class
+  LOOP module class
+    - A module will be instantiated only once
 ###
 
-class root.LOOP
+class LOOP
   constructor: () ->
-    @running = false
     @counter = 0
     @events   = []
+
+
+
+  ###
+Check if the loop is st
+###
+  running: false
+
+
 
   ###
     Add callbacks to the tick event
   ###
   addTickEvent: ( callback ) ->
     @events.push callback
+
+
 
   ###
     Create the tick event
@@ -43,3 +54,6 @@ class root.LOOP
     if @running
       @running = false
       @counter = 0
+
+
+root.loop = new LOOP()

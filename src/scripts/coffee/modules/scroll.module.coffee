@@ -1,9 +1,10 @@
 root = exports ? this
 ###
-  SCROLL class
+  SCROLL module class
+  - A module will be instantiated only once
 ###
 
-class root.SCROLL
+class SCROLL
   constructor: () ->
     @events = []
 
@@ -14,3 +15,5 @@ class root.SCROLL
     parent = @
     window.addEventListener 'scroll', () ->
       callback() for callback in parent.events
+
+root.scroll = new SCROLL()

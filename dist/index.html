@@ -19,7 +19,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Lesley Duyndam | Webdeveloper</title>
+    <title> Lesley Duyndam | CV</title>
     <link rel="stylesheet" href="styles/style.css"/>
 
     <script src="scripts/bower/modernizr/modernizr.js"></script>
@@ -31,11 +31,12 @@
 <body>
 <header>
     <nav id="nav">
-        <a href="#intro" id="title" class="title"><img src="images/LesleyDuyndam_dark_head.svg" alt="Icon Lesley Duyndam"/>Lesley Duyndam</a>
-        <ul>
-            <li><a href="#about-me">About me</a></li>
-            <li><a href="#skills">Skills</a></li>
+        <a href="#intro" id="title" class="title"><img src="images/LesleyDuyndam_dark_head.svg" alt="Icon Lesley Duyndam"/>Lesley Duyndam | CV</a>
+        <ul id="nav-ul">
+
             <!--<li><a href="#portfolio">Portfolio</a></li>-->
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about-me">About me</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#work">Work</a></li>
         </ul>
@@ -47,6 +48,21 @@
 
     <article id="intro">
         <img src="images/LesleyDuyndam_white.svg" id='intro-img' alt="Logo Lesley Duyndam" class="to-middle"/>
+    </article>
+    <!--<article id="portfolio">-->
+        <!--<h1>Portfolio</h1>-->
+        <!--<div id="portfolio-container">-->
+            <!--<article class="liveTile">-->
+                <!--<div>-->
+                    <!--<img src="" alt=""/>-->
+                <!--</div>-->
+            <!--</article>-->
+        <!--</div>-->
+    <!--</article>-->
+    <article id="skills">
+        <h1>Skills</h1>
+        <div id="chart-wrapper">
+        </div>
     </article>
     <article id="about-me">
         <h1>About me</h1>
@@ -81,15 +97,6 @@
         </table>
         <a class="github" target="_blank" title="Open @LesleyDuyndam on Github on a new tab" href="https://www.github.com/LesleyDuyndam"> <img src="images/icons/github.svg" alt=""/><span>Go to @LesleyDuyndam</span></a>
     </article>
-    <article id="skills">
-        <h1>Skills</h1>
-        <div id="chart-wrapper">
-
-        </div>
-    </article>
-    <!--<article id="portfolio">-->
-        <!--<h1>Portfolio</h1>-->
-    <!--</article>-->
     <article id="education">
         <h1>Education</h1>
         <table class="extended">
@@ -155,7 +162,9 @@
 
 <footer>
     <script src="scripts/bower/raphael/raphael.js"></script>
+    <!--<script src="scripts/bower/metrojs/release/Metrojs.Full/Metrojs.js"></script>-->
 
+    <script src="scripts/scrontroll.min.js"></script>
     <script src="scripts/classes.js"></script>
     <script src="scripts/modules.js"></script>
     <script src="scripts/main.js"></script>
