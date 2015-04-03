@@ -84,8 +84,8 @@
 
 
 #    Function to call on every new animation tick
-#    Every new tick, active begins false. If a chart is
-#    not finished, it wil set active to true.
+#    Every new tick, active flag begins false. If a chart is
+#    not finished, it wil set active flag to true.
 
     animation.addTickEvent ->
       animation.running = false
