@@ -1,15 +1,16 @@
-@import "../init";
-
 html {
   &.mobile,
-  &.tablet.portrait {
-    header {
+  &.tablet.portrait,
+  &.desktop.portrait {
+
+    header#header {
+
       nav {
         width: 100%;
         padding: 0;
 
         a#title {
-          padding: 20px 10px;
+
         }
 
         #burger {
@@ -25,30 +26,31 @@ html {
           height: 1px;
           width: 90%;
           margin: 0 5%;
+
           text-align: center;
-          background-color: @color_white;
           overflow: hidden;
+
           border-top: 1px solid rgba(100, 100, 100, 0);
 
           transition: 300ms;
 
           &.show {
+            height: 350px;
             padding-top: 25px;
+
             border-top: 1px solid rgba(100, 100, 100, 0.1);
-            height: 275px;
+
             transition: 150ms;
           }
 
           li {
             display: block;
-
             a {
               display: block;
               padding: 20px 0;
             }
 
             &:last-child {
-
               a {
                 padding: 20px 0 40px 0;
               }
@@ -57,7 +59,33 @@ html {
         }
       }
     }
+
+    #portfolio {
+
+      .item {
+        margin-bottom: 25px;
+      }
+
+      header {
+        img {
+          width: 70%;
+          padding: 30px 15%;
+        }
+      }
+
+      h4 {
+        padding: 50px 10% 25px;
+        font-size: 1.5em;
+      }
+
+      p {
+        padding: 0 10% 50px;
+        font-size: 0.9em;
+      }
+
+    }
   }
+
   &.mobile {
     article {
       padding: 100px 0;
@@ -67,7 +95,7 @@ html {
       }
 
       table {
-        margin: 0;
+        margin: 0 0 75px;
         width: 100%;
 
         td {
@@ -78,23 +106,32 @@ html {
           }
         }
       }
-
-      .github {
-        margin-top: 100px;
-      }
     }
 
     #skills {
-      text-align: center;
-
       .wrapper {
-        display: inline-block;
         width: 66%;
       }
     }
 
-    .internships {
-      margin-top: 100px;
+    button {
+      padding: 15px;
+      font-size: 0.8em;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
+html {
+  &.tablet.landscape {
+    #portfolio {
+
+      > div {
+        padding: 210px 0;
+      }
     }
   }
 }

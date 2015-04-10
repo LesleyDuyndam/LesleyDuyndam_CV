@@ -1,27 +1,25 @@
-@import '../init';
+@import '../color_palette';
 
-h1, h2, h3, h4, h5, h6, a, p, table {
+#about-me {
+
+  background-color: @color_primary;
   color: @color_white;
-}
 
-.github {
-
-  display: inline-block;
-  vertical-align: middle;
-
-  text-decoration: none;
-  color: @color_dark;
-
-  img {
-    margin-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
+  a {
+    color: @color_white;
   }
 
-  span {
-    margin-top: 2px;
+  .github, img, span {
     display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
+  }
 
+  .github {
+    color: @color_dark;
+    
+    img {
+      margin-right: 15px;
+    }
   }
 }

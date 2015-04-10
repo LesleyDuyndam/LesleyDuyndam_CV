@@ -1,5 +1,5 @@
 (function() {
-  var LOOP, root;
+  var ANIMATION, root;
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -9,8 +9,8 @@
       - A module will be instantiated only once
    */
 
-  LOOP = (function() {
-    function LOOP() {
+  ANIMATION = (function() {
+    function ANIMATION() {
       this.counter = 0;
       this.events = [];
     }
@@ -20,14 +20,14 @@
     Check if the loop is st
      */
 
-    LOOP.prototype.running = false;
+    ANIMATION.prototype.running = false;
 
 
     /*
       Add callbacks to the tick event
      */
 
-    LOOP.prototype.addTickEvent = function(callback) {
+    ANIMATION.prototype.addTickEvent = function(callback) {
       return this.events.push(callback);
     };
 
@@ -36,7 +36,7 @@
       Create the tick event
      */
 
-    LOOP.prototype.tick = function() {
+    ANIMATION.prototype.tick = function() {
       var callback, i, len, ref;
       if (this.running) {
         ref = this.events;
@@ -58,7 +58,7 @@
       Start the loop
      */
 
-    LOOP.prototype.play = function() {
+    ANIMATION.prototype.play = function() {
       if (!this.running) {
         this.running = true;
         return window.requestAnimationFrame((function(_this) {
@@ -69,23 +69,27 @@
       }
     };
 
+    ANIMATION.prototype.started = function() {
+      return this.counter !== 0;
+    };
+
 
     /*
       Pause the loop
      */
 
-    LOOP.prototype.pause = function() {
+    ANIMATION.prototype.pause = function() {
       if (this.running) {
         this.running = false;
         return this.counter = 0;
       }
     };
 
-    return LOOP;
+    return ANIMATION;
 
   })();
 
-  root.loop = new LOOP();
+  root.animation = new ANIMATION();
 
 }).call(this);
 
@@ -103,17 +107,16 @@
   SCROLL = (function() {
     function SCROLL() {
       this.events = [];
+      this.wait = false;
+      this.start_time = 0;
     }
 
     SCROLL.prototype.addEvent = function(callback) {
-      return this.events.push(callback);
-    };
-
-    SCROLL.prototype.listen = function() {
       var parent;
+      this.events.push(callback);
       parent = this;
       return window.addEventListener('scroll', function() {
-        var callback, i, len, ref, results;
+        var i, len, ref, results;
         ref = parent.events;
         results = [];
         for (i = 0, len = ref.length; i < len; i++) {
@@ -122,6 +125,11 @@
         }
         return results;
       });
+    };
+
+    SCROLL.prototype.pause = function(ms) {
+      this.wait = true;
+      return this.start_time = new Date() + ms;
     };
 
     return SCROLL;

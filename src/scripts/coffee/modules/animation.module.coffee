@@ -4,7 +4,7 @@ root = exports ? this
     - A module will be instantiated only once
 ###
 
-class LOOP
+class ANIMATION
   constructor: () ->
     @counter = 0
     @events   = []
@@ -45,6 +45,9 @@ Check if the loop is st
       @running = true
       window.requestAnimationFrame => @tick()
 
+  started: () ->
+    @counter != 0
+
 
 
   ###
@@ -56,4 +59,4 @@ Check if the loop is st
       @counter = 0
 
 
-root.loop = new LOOP()
+root.animation = new ANIMATION()

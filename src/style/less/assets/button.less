@@ -1,0 +1,28 @@
+@import "../color_palette";
+
+button {
+  padding: 20px;
+
+  background-color: rgba(231, 226, 216, 0);
+  color: @color_white;
+  border: 1px solid @color_white;
+
+  font-weight: 100;
+  font-size: 1em;
+
+  outline:none;
+
+  transition: 300ms;
+
+  .button_node {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(231, 226, 216, 0.2);
+    border: 1px solid rgba(231, 226, 216, 0.5);
+  }
+}
