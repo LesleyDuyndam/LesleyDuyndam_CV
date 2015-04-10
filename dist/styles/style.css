@@ -1,47 +1,47 @@
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 article {
   display: block;
   width: 100%;
   padding: 200px 0;
   text-align: center;
 }
+article h1 {
+  margin-top: 0;
+  font-size: 5em;
+}
+article p {
+  line-height: 1.5em;
+}
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+button {
+  padding: 20px;
+  background-color: rgba(231, 226, 216, 0);
+  color: #e7e2d8;
+  border: 1px solid #e7e2d8;
+  font-weight: 100;
+  font-size: 1em;
+  outline: none;
+  transition: 300ms;
 }
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
+button .button_node {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
 }
-#container {
+button:hover {
+  cursor: pointer;
+  background-color: rgba(231, 226, 216, 0.2);
+  border: 1px solid rgba(231, 226, 216, 0.5);
+}
+
+html.mobile header#header nav,
+html.tablet.portrait header#header nav,
+html.desktop.portrait header#header nav {
   width: 100%;
-}
-html.mobile header nav,
-html.tablet.portrait header nav {
-  width: 100%;
   padding: 0;
 }
-html.mobile header nav a#title,
-html.tablet.portrait header nav a#title {
-  padding: 20px 10px;
-}
-html.mobile header nav #burger,
-html.tablet.portrait header nav #burger {
+html.mobile header#header nav #burger,
+html.tablet.portrait header#header nav #burger,
+html.desktop.portrait header#header nav #burger {
   position: fixed;
   display: block;
   top: 20px;
@@ -49,36 +49,63 @@ html.tablet.portrait header nav #burger {
   margin: 0;
   padding: 0;
 }
-html.mobile header nav ul,
-html.tablet.portrait header nav ul {
+html.mobile header#header nav ul,
+html.tablet.portrait header#header nav ul,
+html.desktop.portrait header#header nav ul {
   height: 1px;
   width: 90%;
   margin: 0 5%;
   text-align: center;
-  background-color: #e7e2d8;
   overflow: hidden;
   border-top: 1px solid rgba(100, 100, 100, 0);
   transition: 300ms;
 }
-html.mobile header nav ul.show,
-html.tablet.portrait header nav ul.show {
+html.mobile header#header nav ul.show,
+html.tablet.portrait header#header nav ul.show,
+html.desktop.portrait header#header nav ul.show {
+  height: 350px;
   padding-top: 25px;
   border-top: 1px solid rgba(100, 100, 100, 0.1);
-  height: 275px;
   transition: 150ms;
 }
-html.mobile header nav ul li,
-html.tablet.portrait header nav ul li {
+html.mobile header#header nav ul li,
+html.tablet.portrait header#header nav ul li,
+html.desktop.portrait header#header nav ul li {
   display: block;
 }
-html.mobile header nav ul li a,
-html.tablet.portrait header nav ul li a {
+html.mobile header#header nav ul li a,
+html.tablet.portrait header#header nav ul li a,
+html.desktop.portrait header#header nav ul li a {
   display: block;
   padding: 20px 0;
 }
-html.mobile header nav ul li:last-child a,
-html.tablet.portrait header nav ul li:last-child a {
+html.mobile header#header nav ul li:last-child a,
+html.tablet.portrait header#header nav ul li:last-child a,
+html.desktop.portrait header#header nav ul li:last-child a {
   padding: 20px 0 40px 0;
+}
+html.mobile #portfolio .item,
+html.tablet.portrait #portfolio .item,
+html.desktop.portrait #portfolio .item {
+  margin-bottom: 25px;
+}
+html.mobile #portfolio header img,
+html.tablet.portrait #portfolio header img,
+html.desktop.portrait #portfolio header img {
+  width: 70%;
+  padding: 30px 15%;
+}
+html.mobile #portfolio h4,
+html.tablet.portrait #portfolio h4,
+html.desktop.portrait #portfolio h4 {
+  padding: 50px 10% 25px;
+  font-size: 1.5em;
+}
+html.mobile #portfolio p,
+html.tablet.portrait #portfolio p,
+html.desktop.portrait #portfolio p {
+  padding: 0 10% 50px;
+  font-size: 0.9em;
 }
 html.mobile article {
   padding: 100px 0;
@@ -87,7 +114,7 @@ html.mobile article:first-child {
   padding: 300px 0 200px;
 }
 html.mobile article table {
-  margin: 0;
+  margin: 0 0 75px;
   width: 100%;
 }
 html.mobile article table td {
@@ -96,50 +123,24 @@ html.mobile article table td {
 html.mobile article table td:first-child {
   width: 33%;
 }
-html.mobile article .github {
-  margin-top: 100px;
-}
-html.mobile #skills {
-  text-align: center;
-}
 html.mobile #skills .wrapper {
-  display: inline-block;
   width: 66%;
 }
-html.mobile .internships {
-  margin-top: 100px;
+html.mobile button {
+  padding: 15px;
+  font-size: 0.8em;
+}
+html.mobile button img {
+  width: 20px;
+}
+html.tablet.landscape #portfolio > div {
+  padding: 210px 0;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 svg {
   z-index: 0;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 table {
   width: 66%;
   margin: 50px auto 80px;
@@ -155,244 +156,192 @@ table tr:nth-child( odd ) {
 table tr:last-child( even ) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-table tr td {
-  border: 0;
-  padding: 15px 20px;
-}
-table tr td:first-child {
-  width: 33%;
-  opacity: 0.6;
-  text-align: right;
-}
-.extended td {
-  padding: 25px 20px;
-}
-
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
-h1 {
-  font-size: 5em;
-}
-table,
-address {
-  font-family: "Roboto", sans-serif;
+table tr td,
+table tr address {
   font-weight: 100;
   font-style: normal;
 }
-article h1 {
-  margin-top: 0;
-}
-table td {
+table tr td {
+  border: 0;
+  padding: 15px 20px;
   vertical-align: top;
 }
-table h1 {
+table tr td:first-child {
+  width: 33%;
+  text-align: right;
+}
+table tr td h1 {
   display: inline-block;
-  font-family: "Convergence", sans-serif;
   font-size: 1em;
   margin: 0 auto 5px;
 }
-table h1 a {
-  text-decoration: none;
-  font-style: normal;
-}
-table h2 {
+table tr td h2 {
   display: inline-block;
   margin: 0 auto 5px 5px;
   font-size: 0.8em;
   font-weight: 100;
 }
-table h3 {
-  display: inline-block;
-  margin: 5px auto;
-  font-size: 0.8em;
-  font-weight: 100;
-}
-.mobile h1,
-.tablet.portrait h1 {
-  font-size: 1.2em;
-}
-.mobile h2,
-.tablet.portrait h2 {
-  font-size: 1.1em;
-}
-.mobile h3,
-.tablet.portrait h3 {
-  font-size: 1em;
-}
-.mobile h4,
-.tablet.portrait h4 {
+.extended span {
   font-size: 0.9em;
+  display: block;
 }
-.mobile h5,
-.tablet.portrait h5 {
-  font-size: 0.8em;
-}
-.mobile h6,
-.tablet.portrait h6 {
-  font-size: 0.8em;
-}
-.mobile p,
-.tablet.portrait p {
-  font-size: 0.8em;
-}
-.mobile table,
-.tablet.portrait table {
-  font-size: 0.7em;
-}
-.mobile header #title,
-.tablet.portrait header #title {
-  font-size: 1em;
-}
-.mobile article > h1,
-.tablet.portrait article > h1 {
-  font-size: 1.3em;
-  margin-bottom: 75px;
+.extended td {
+  padding: 25px 20px;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
+html,
 p,
-table {
+button {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1em;
+}
+html {
+  color: #443f35;
+  font-weight: 100;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6,
+html blockquote {
+  font-family: "Convergence", sans-serif;
+}
+html a {
+  text-decoration: none;
+  color: #7cb0a9;
+}
+html blockquote {
+  border-left: 5px solid #7cb0a9;
+  background-color: rgba(68, 63, 53, 0.1);
+}
+html.mobile h1,
+html.tablet.portrait h1 {
+  font-size: 1.2em;
+}
+html.mobile h2,
+html.tablet.portrait h2 {
+  font-size: 1.1em;
+}
+html.mobile h3,
+html.tablet.portrait h3 {
+  font-size: 1em;
+}
+html.mobile h4,
+html.tablet.portrait h4 {
+  font-size: 0.9em;
+}
+html.mobile h5,
+html.tablet.portrait h5 {
+  font-size: 0.8em;
+}
+html.mobile h6,
+html.tablet.portrait h6 {
+  font-size: 0.8em;
+}
+html.mobile p,
+html.tablet.portrait p {
+  font-size: 0.8em;
+}
+html.mobile table,
+html.tablet.portrait table {
+  font-size: 0.7em;
+}
+html.mobile #header h1,
+html.tablet.portrait #header h1 {
+  font-size: 1em;
+  margin: 0;
+  padding: 20px 10px;
+}
+html.mobile article > h1,
+html.tablet.portrait article > h1 {
+  margin-bottom: 50px;
+}
+
+
+#about-me {
+  background-color: #7cb0a9;
   color: #e7e2d8;
 }
-.github {
+#about-me a {
+  color: #e7e2d8;
+}
+#about-me .github,
+#about-me img,
+#about-me span {
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
+}
+#about-me .github {
   color: #443f35;
 }
-.github img {
+#about-me .github img {
   margin-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.github span {
-  margin-top: 2px;
-  display: inline-block;
-  vertical-align: middle;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 article#education {
   background-color: #c26558;
+  color: #e7e2d8;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
-header {
+header#header {
   position: fixed;
   top: -200px;
   width: 100%;
   background-color: #e7e2d8;
   z-index: 10;
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
+  box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
   transition: 500ms;
 }
-header.show-mobile {
+header#header.show-mobile {
   top: 0 !important;
   transition: 300ms;
 }
-header.show {
+header#header.show {
   top: 0;
   transition: 300ms;
 }
-header a {
+header#header a {
   padding: 40px 10px;
   display: inline-block;
   text-decoration: none;
   color: #443f35;
 }
-header #title {
+header#header h1 {
   font-size: 1.5em;
-  padding: 30px 10px;
+  display: inline-block;
+  height: 100%;
+  margin: 30px 0;
 }
-header img {
+header#header h1 a {
+  padding: 0;
+  font-family: "Convergence", sans-serif;
+}
+header#header img {
   height: 40px;
   margin-right: 10px;
   display: inline-block;
   vertical-align: middle;
 }
-header nav {
+header#header nav {
   width: 80%;
   padding: 0 10%;
 }
-header nav ul {
+header#header nav ul {
+  background-color: #e7e2d8;
   float: right;
   margin: 0;
   padding: 0;
 }
-header nav ul li {
+header#header nav ul li {
   display: inline-block;
 }
-header nav #burger {
+header#header nav #burger {
   display: none;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 #intro {
   background-color: #c26558;
 }
@@ -405,36 +354,98 @@ BODY {
   margin: 3% auto;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 #portfolio {
-  background-color: #443f35;
+  padding: 0;
+}
+#portfolio > div {
+  padding: 400px 20%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#portfolio > div .item {
+  margin-bottom: 50px;
+}
+#portfolio > div .item img {
+  width: 50%;
+  padding: 25px 0;
+}
+#portfolio > div .item .content_box {
+  overflow: hidden;
+}
+#portfolio > div .item .item_content {
+  background-color: #e7e2d8;
+  transition: margin-top 500ms ease-in-out;
+  padding: 75px 2.5%;
+}
+#portfolio > div .item .item_content.closed {
+  margin-top: -4000px;
+}
+#portfolio > div .item .item_content.open {
+  margin-top: 0;
+}
+#portfolio > div .item .item_content h1,
+#portfolio > div .item .item_content h2,
+#portfolio > div .item .item_content h3,
+#portfolio > div .item .item_content h4,
+#portfolio > div .item .item_content h5,
+#portfolio > div .item .item_content h6 {
+  padding: 100px 10% 25px;
+}
+#portfolio > div .item .item_content p,
+#portfolio > div .item .item_content ul,
+#portfolio > div .item .item_content h1,
+#portfolio > div .item .item_content h2,
+#portfolio > div .item .item_content h3,
+#portfolio > div .item .item_content h4,
+#portfolio > div .item .item_content h5,
+#portfolio > div .item .item_content h6,
+#portfolio > div .item .item_content blockquote {
+  max-width: 650px;
+  margin: 0 auto;
+}
+#portfolio > div .item .item_content p {
+  padding: 0 0 100px;
+}
+#portfolio > div .item .item_content blockquote {
+  margin: 50px auto;
+  padding: 20px 5%;
+}
+#portfolio > div .item .item_content img {
+  width: 95%;
+  padding: 2.5%;
+}
+#portfolio > div .item .item_content img.dubble {
+  width: 45%;
+  padding: 2.5%;
+  display: inline-block;
+}
+html.mobile #portfolio > div {
+  padding: 180px 0 225px;
+}
+html.mobile #portfolio .item_content {
+  padding: 25px 0 0;
+}
+html.mobile #portfolio .item_content p,
+html.mobile #portfolio .item_content ul,
+html.mobile #portfolio .item_content h1,
+html.mobile #portfolio .item_content h2,
+html.mobile #portfolio .item_content h3,
+html.mobile #portfolio .item_content h4,
+html.mobile #portfolio .item_content h5,
+html.mobile #portfolio .item_content h6,
+html.mobile #portfolio .item_content blockquote {
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+html.tablet.portrait #portfolio > div {
+  padding: 310px 0 370px;
+}
+html.tablet.portrait #portfolio .item_content {
+  padding: 100px 0 0;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 #skills {
   background-color: #e7e2d8;
 }
@@ -455,33 +466,21 @@ BODY {
   display: inline-block;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
-  margin: 0;
-  padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
-}
-#container {
-  width: 100%;
-}
 #work {
   background-color: #443f35;
+  color: #e7e2d8;
+}
+#work .internships {
+  margin-top: 100px;
 }
 
-.box-shadow {
-  box-shadow: 0 0 10px rgba(68, 63, 53, 0.5);
-}
-BODY {
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+@import url(http://fonts.googleapis.com/css?family=Convergence);
+
+* {
   margin: 0;
   padding: 0;
-  font-family: "Convergence", sans-serif;
-  background-color: #7cb0a9;
-  color: #443f35;
 }
-#container {
+section#container {
   width: 100%;
 }

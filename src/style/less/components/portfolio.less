@@ -1,5 +1,100 @@
-@import '../init';
+@import '../color_palette';
 
 #portfolio {
-  background-color: @color_dark;
+  padding: 0;
+
+  > div {
+    padding: 400px 20%;
+    background-attachment: fixed;
+    background-size: cover;
+
+    .item {
+      margin-bottom: 50px;
+
+      img {
+        width: 50%;
+        padding: 25px 0;
+      }
+
+      .content_box {
+        overflow: hidden;
+      }
+
+      .item_content {
+        background-color: @color_white;
+        transition: margin-top 500ms ease-in-out;
+        padding: 75px 2.5%;
+
+        &.closed {
+          margin-top: -4000px;
+        }
+        &.open {
+          margin-top: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          padding: 100px 10% 25px;
+        }
+
+        p, ul, h1, h2, h3, h4, h5, h6, blockquote {
+          max-width: 650px;
+          margin: 0 auto;
+        }
+
+        p {
+          padding: 0 0 100px;
+        }
+
+        blockquote {
+          margin: 50px auto;
+          padding: 20px 5%;
+        }
+
+        img {
+          width: 95%;
+          padding: 2.5%;
+
+          &.dubble {
+            width: 45%;
+            padding: 2.5%;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+html.mobile {
+  #portfolio {
+    > div {
+      padding: 180px 0 225px;
+    }
+
+    .item_content {
+      padding: 25px 0 0;
+
+      p, ul, h1, h2, h3, h4, h5, h6, blockquote {
+        text-align: left;
+        margin: 0 auto;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+}
+
+html.tablet.portrait {
+  #portfolio {
+    > div {
+      padding: 310px 0 370px;
+    }
+
+
+    .item_content {
+      padding: 100px 0 0;
+    }
+  }
+
 }

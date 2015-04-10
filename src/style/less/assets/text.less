@@ -1,73 +1,51 @@
-@import "../init";
+@import "../color_palette";
 
-h1 {
-  font-size: 5em;
-}
-
-table, address {
+html, p, button {
   font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+html {
+  color: @color_dark;
   font-weight: 100;
-  font-style: normal;
-}
 
-article {
-  h1{
-    margin-top: 0;
-  }
-}
-
-table {
-
-  td {
-    vertical-align: top;
-  }
-
-  h1 {
-    display: inline-block;
+  h1, h2, h3, h4, h5, h6, blockquote {
     font-family: "Convergence", sans-serif;
-    font-size: 1em;
-    margin: 0 auto 5px;
-
-    a {
-      text-decoration: none;
-      font-style: normal;
-    }
   }
 
-  h2 {
-    display: inline-block;
-    margin: 0 auto 5px 5px;
-    font-size: 0.8em;
-    font-weight: 100;
+  a {
+    text-decoration: none;
+    color: @color_primary;
   }
 
-  h3 {
-    display: inline-block;
-    margin: 5px auto;
-    font-size: 0.8em;
-    font-weight: 100;
+  blockquote {
+    border-left: 5px solid @color_primary;
+    background-color: rgba(68, 63, 53, 0.1);
   }
 }
 
-.mobile, .tablet.portrait {
+html {
+  &.mobile,
+  &.tablet.portrait {
 
-  h1 { font-size: 1.2em }
-  h2 { font-size: 1.1em }
-  h3 { font-size: 1em }
-  h4 { font-size: 0.9em }
-  h5 { font-size: 0.8em }
-  h6 { font-size: 0.8em }
-  p { font-size: 0.8em }
-  table { font-size: 0.7em }
-
-  header {
-    #title {
-      font-size: 1em;
+    h1 { font-size: 1.2em }
+    h2 { font-size: 1.1em }
+    h3 { font-size: 1em }
+    h4 { font-size: 0.9em }
+    h5 { font-size: 0.8em }
+    h6 { font-size: 0.8em }
+    p { font-size: 0.8em }
+    table { font-size: 0.7em
     }
-  }
 
-  article > h1 {
-      font-size: 1.3em;
-      margin-bottom: 75px;
+    #header h1 {
+      font-size: 1em;
+      margin: 0;
+      padding: 20px 10px;
+    }
+
+    article > h1 {
+      margin-bottom: 50px;
+    }
   }
 }

@@ -19,7 +19,6 @@ module.exports = function( grunt ){
         coffee: {
             compile: {
                 files: {
-                    'dist/scripts/assets.js': 'src/scripts/coffee/assets/**/*.coffee',
                     'dist/scripts/classes.js': 'src/scripts/coffee/classes/**/*.coffee',
                     'dist/scripts/modules.js': 'src/scripts/coffee/modules/**/*.coffee',
                     'dist/scripts/main.js': 'src/scripts/coffee/main.coffee'
