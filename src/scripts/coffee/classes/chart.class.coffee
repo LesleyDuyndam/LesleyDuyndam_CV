@@ -14,22 +14,11 @@ class root.CHART
     @finished   = false;
 
 
-
-#   Create div.wrapper.@label[ text]
-    wrapper = document.createElement( 'div' )
-    wrapper.classList.add( 'wrapper' )
-    wrapper.classList.add( @label.text )
-
-#   Add the div to the parent
-    wrapper = document.getElementById( @parent ).appendChild( wrapper )
-
-#   Check if @width = true
-
     if params.width == undefined
-      @width = wrapper.clientWidth
+      @width = @label['element'].clientWidth
 
     if params.height == undefined
-      @height = wrapper.clientWidth
+      @height = @label['element'].clientWidth
 
     Raphael.prototype.center =  {
       x : this.width / 2,
@@ -37,7 +26,7 @@ class root.CHART
     }
 
 #   Create the Raphael svg object
-    @paper = Raphael( wrapper, parseInt( @width ), parseInt( @height ) )
+    @paper = Raphael( @label['element'], parseInt( @width ), parseInt( @height ) )
 
     # Determine the shortest side (x or y) and make the radius 1/3 of it
     if @paper.width >= @paper.height

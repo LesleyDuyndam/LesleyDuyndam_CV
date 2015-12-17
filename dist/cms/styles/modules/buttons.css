@@ -1,0 +1,20 @@
+.async_data section.buttons {
+    position: relative;
+    overflow: hidden;
+}
+.async_data section.buttons .button-holder {
+    float: right;
+}
+.async_data section.buttons .button-holder button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    color: white;
+    background-color: rgba(45,45,45,1);
+}
+.async_data section.buttons .button-holder button.save {
+    background-color: #7cb0a9;
+}
+.async_data section.buttons .button-holder button.cancel {
+    background-color: #c26558;
+}

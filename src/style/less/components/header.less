@@ -2,12 +2,11 @@
 
 header#header {
   position: fixed;
-  top: -200px;
+  top: -80px;
   width: 100%;
-  background-color: @color_white;
-  z-index: 10;
-  box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
   transition: 500ms;
+  z-index: 200;
+  background-color: @color_white;
 
   &.show-mobile {
     top: 0 !important;
@@ -19,12 +18,19 @@ header#header {
     transition: 300ms;
   }
 
+  &.hide {
+    top: -80px !important;
+    transition: 300ms;
+  }
 
+
+  button,
   a {
-    padding: 40px 10px;
+    padding: 30px 10px;
     display: inline-block;
     text-decoration: none;
     color: @color_dark;
+    border: none;
   }
 
   h1 {
@@ -32,7 +38,7 @@ header#header {
     display: inline-block;
     vertical-align: middle;
     height: 100%;
-    margin: 30px 0;
+    margin: 20px 0;
     a {
       padding: 0;
       font-family: "Convergence", sans-serif;
@@ -57,6 +63,7 @@ header#header {
   nav {
     width: 80%;
     padding: 0 10%;
+    box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
     ul {
       background-color: @color_white;
       float: right;

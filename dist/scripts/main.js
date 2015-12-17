@@ -1,6 +1,6 @@
 (function() {
   (function($) {
-    var animation, burger, forceShowHeader, header, hideHeader, i, j, label, labels, len, len1, mobile_menu, results, root, scroll, scrontroll, target, trigger;
+    var animation, burger, element, forceShowHeader, header, hideHeader, i, j, k, label, len, len1, len2, mobile_menu, ref, ref1, ref2, results, root, scroll, scrontroll, target, trigger;
     root = typeof exports !== "undefined" && exports !== null ? exports : this;
     header = $(' #header ');
 
@@ -74,41 +74,23 @@
         }, 150);
       }
     });
-    labels = [
-      {
-        text: 'HTML5',
-        value: 90
-      }, {
-        text: 'CSS',
-        value: 85
-      }, {
-        text: 'JavaScript',
-        value: 83
-      }, {
-        text: 'Illustrator',
-        value: 80
-      }, {
-        text: 'CoffeeScript',
-        value: 75
-      }, {
-        text: 'jQuery',
-        value: 70
-      }, {
-        text: 'Wordpress',
-        value: 65
-      }, {
-        text: 'AngularJS',
-        value: 45
-      }, {
-        text: 'NodeJS',
-        value: 40
-      }
-    ];
+    this.labels = [];
     this.charts = [];
+    this.label_elements = $('#chart-wrapper .wrapper');
+    ref = this.label_elements;
+    for (i = 0, len = ref.length; i < len; i++) {
+      element = ref[i];
+      this.labels.push({
+        element: $(element)[0],
+        text: $(element).attr('data-name'),
+        value: parseInt($(element).attr('data-value'))
+      });
+    }
     if (device.mobile()) {
+      ref1 = this.labels;
       results = [];
-      for (i = 0, len = labels.length; i < len; i++) {
-        label = labels[i];
+      for (j = 0, len1 = ref1.length; j < len1; j++) {
+        label = ref1[j];
         results.push(this.charts.push(new root.CHART('chart-wrapper', label, {
           stroke: 5,
           ringColor: 'rgba(68, 63, 53, 1)'
@@ -116,8 +98,9 @@
       }
       return results;
     } else {
-      for (j = 0, len1 = labels.length; j < len1; j++) {
-        label = labels[j];
+      ref2 = this.labels;
+      for (k = 0, len2 = ref2.length; k < len2; k++) {
+        label = ref2[k];
         this.charts.push(new root.CHART('chart-wrapper', label, {
           animate: true,
           speed: 2,
@@ -133,11 +116,11 @@
         bottom: target.nextElementSibling.offsetTop
       };
       animation.addTickEvent(function() {
-        var chart, k, len2, ref;
+        var chart, l, len3, ref3;
         animation.running = false;
-        ref = this.charts;
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          chart = ref[k];
+        ref3 = this.charts;
+        for (l = 0, len3 = ref3.length; l < len3; l++) {
+          chart = ref3[l];
           animation.running = animation.running || chart.animatePath();
         }
         if (!animation.running) {

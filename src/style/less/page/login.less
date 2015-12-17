@@ -1,0 +1,115 @@
+section#container.login {
+
+  * {
+    //background-color: rgba(255,255,255,0.4);
+    //border: 1px solid rgba(0,0,0,0.3);
+    text-align: left;
+    border: none;
+  }
+
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: block;
+
+  background-image: url('../images/flex-work.jpeg');
+  background-position: center;
+  background-size: cover;
+
+  #login {
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,1);
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    h1 {
+      text-align: center;
+    }
+    form {
+
+      padding-top: 20px;
+      * {
+        font-size: 16px;
+        border: none;
+      }
+
+      .alert-box {
+        display: none;
+
+        border: 1px solid rgba(255, 0, 0, 0.67);
+        color: rgba(255,0,0,0.67);
+
+        padding: 20px;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+
+        &.show {
+          display: block;
+        }
+      }
+
+      fieldset {
+        padding: 10px 0 0;
+        display: block;
+
+        &.name {
+          height: auto;
+          max-height: 0;
+          overflow: hidden;
+
+          -webkit-transition: max-height 350ms;
+          -moz-transition: max-height 350ms;
+          -ms-transition: max-height 350ms;
+          -o-transition: max-height 350ms;
+          transition: max-height 350ms;
+          
+          &.show {
+            max-height: 300px;
+          }
+        }
+        label {
+          display: block;
+          padding: 5px 0;
+        }
+        input {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 10px 15px;
+          margin: 10px 0;
+          outline: none;
+          border: 1px solid rgba(0,0,0,1);
+
+          &#submit {
+            width: auto;
+            float: right;
+            border: none;
+            background-color: rgba(124, 176, 169, 1);
+            color: white;
+            padding: 10px 30px;
+
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgba(0,0,0,1);
+            }
+          }
+        }
+      }
+    }
+
+    .register {
+      color: black;
+    }
+  }
+}

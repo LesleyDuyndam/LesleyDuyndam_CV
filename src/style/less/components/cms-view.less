@@ -1,0 +1,57 @@
+@import "../color_palette";
+
+body {
+
+  &.cms-view-active {
+    .body-overlay {
+      background-color: rgba(0,0,0,0.7);
+      z-index: 100;
+      .cms-view {
+        top: 50%;
+      }
+    }
+  }
+
+  .body-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -100;
+    left: 0;
+    top: 0;
+    -webkit-transition: background-color 350ms;
+    -moz-transition: background-color 350ms;
+    -ms-transition: background-color 350ms;
+    -o-transition: background-color 350ms;
+    transition: background-color 350ms;
+
+    .cms-view {
+      position: fixed;
+      top: -100vh;
+      left: 50%;
+      width: 80vw;
+      //min-height: 500px;
+      max-height: 90vh;
+      //height: 100vh;
+      max-width: 1200px;
+      overflow: scroll;
+
+      background-color: white;
+      padding: 50px;
+      box-sizing: border-box;
+
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+      -webkit-transition: top 350ms;
+      -moz-transition: top 350ms;
+      -ms-transition: top 350ms;
+      -o-transition: top 350ms;
+      transition: top 350ms;
+
+    }
+  }
+}

@@ -5,7 +5,6 @@
 
   root.CHART = (function() {
     function CHART(parent, label, params) {
-      var wrapper;
       this.parent = parent;
       this.label = label;
       this.animate = params.animate || false;
@@ -15,21 +14,17 @@
       this.ringColor = params.ringColor || 'rgba( 0, 0, 0, 1)';
       this.value = -this.speed;
       this.finished = false;
-      wrapper = document.createElement('div');
-      wrapper.classList.add('wrapper');
-      wrapper.classList.add(this.label.text);
-      wrapper = document.getElementById(this.parent).appendChild(wrapper);
       if (params.width === void 0) {
-        this.width = wrapper.clientWidth;
+        this.width = this.label['element'].clientWidth;
       }
       if (params.height === void 0) {
-        this.height = wrapper.clientWidth;
+        this.height = this.label['element'].clientWidth;
       }
       Raphael.prototype.center = {
         x: this.width / 2,
         y: this.height / 2
       };
-      this.paper = Raphael(wrapper, parseInt(this.width), parseInt(this.height));
+      this.paper = Raphael(this.label['element'], parseInt(this.width), parseInt(this.height));
       if (this.paper.width >= this.paper.height) {
         this.radius = this.paper.height / 3;
       } else {

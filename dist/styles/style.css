@@ -281,6 +281,69 @@ html.tablet.portrait article > h1 {
   margin-right: 15px;
 }
 
+header#header .backend-panel {
+  position: relative;
+  z-index: 9;
+  background-color: #443f35;
+  color: #e7e2d8;
+}
+header#header .backend-panel .cms-menu {
+  float: none;
+  display: inline-block;
+  background-color: transparent;
+}
+header#header .backend-panel .cms-menu li button,
+header#header .backend-panel .cms-menu li a {
+  padding: 20px 10px;
+  color: #e7e2d8;
+}
+header#header .backend-panel .cms-menu.user {
+  float: right;
+}
+
+body.cms-view-active .body-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+body.cms-view-active .body-overlay .cms-view {
+  top: 50%;
+}
+body .body-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -100;
+  left: 0;
+  top: 0;
+  -webkit-transition: background-color 350ms;
+  -moz-transition: background-color 350ms;
+  -ms-transition: background-color 350ms;
+  -o-transition: background-color 350ms;
+  transition: background-color 350ms;
+}
+body .body-overlay .cms-view {
+  position: fixed;
+  top: -100vh;
+  left: 50%;
+  width: 80vw;
+  max-height: 90vh;
+  max-width: 1200px;
+  overflow: scroll;
+  background-color: white;
+  padding: 50px;
+  box-sizing: border-box;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: top 350ms;
+  -moz-transition: top 350ms;
+  -ms-transition: top 350ms;
+  -o-transition: top 350ms;
+  transition: top 350ms;
+}
+
 article#education {
   background-color: #c26558;
   color: #e7e2d8;
@@ -288,12 +351,11 @@ article#education {
 
 header#header {
   position: fixed;
-  top: -200px;
+  top: -80px;
   width: 100%;
-  background-color: #e7e2d8;
-  z-index: 10;
-  box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
   transition: 500ms;
+  z-index: 200;
+  background-color: #e7e2d8;
 }
 header#header.show-mobile {
   top: 0 !important;
@@ -303,18 +365,24 @@ header#header.show {
   top: 0;
   transition: 300ms;
 }
+header#header.hide {
+  top: -80px !important;
+  transition: 300ms;
+}
+header#header button,
 header#header a {
-  padding: 40px 10px;
+  padding: 30px 10px;
   display: inline-block;
   text-decoration: none;
   color: #443f35;
+  border: none;
 }
 header#header h1 {
   font-size: 1.5em;
   display: inline-block;
   vertical-align: middle;
   height: 100%;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 header#header h1 a {
   padding: 0;
@@ -336,6 +404,7 @@ header#header img {
 header#header nav {
   width: 80%;
   padding: 0 10%;
+  box-shadow: 0 0 10px rgba(90, 90, 90, 0.5);
 }
 header#header nav ul {
   background-color: #e7e2d8;
@@ -360,6 +429,17 @@ header#header nav #burger {
 }
 .tablet.landscape #intro img {
   margin: 3% auto;
+}
+
+#lab {
+  background-color: #388885;
+}
+#lab .item-list {
+  width: 66%;
+  margin: 50px auto 80px;
+}
+#lab .item-list .item iframe html body #output .box pre {
+  background-color: #388885;
 }
 
 #portfolio {
@@ -491,4 +571,98 @@ html.tablet.portrait #portfolio .item_content {
 }
 section#container {
   width: 100%;
+}
+
+section#container.login {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: block;
+  background-image: url('../images/flex-work.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+section#container.login * {
+  text-align: left;
+  border: none;
+}
+section#container.login #login {
+  width: 90%;
+  max-width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+section#container.login #login h1 {
+  text-align: center;
+}
+section#container.login #login form {
+  padding-top: 20px;
+}
+section#container.login #login form * {
+  font-size: 16px;
+  border: none;
+}
+section#container.login #login form .alert-box {
+  display: none;
+  border: 1px solid rgba(255, 0, 0, 0.67);
+  color: rgba(255, 0, 0, 0.67);
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+section#container.login #login form .alert-box.show {
+  display: block;
+}
+section#container.login #login form fieldset {
+  padding: 10px 0 0;
+  display: block;
+}
+section#container.login #login form fieldset.name {
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 350ms;
+  -moz-transition: max-height 350ms;
+  -ms-transition: max-height 350ms;
+  -o-transition: max-height 350ms;
+  transition: max-height 350ms;
+}
+section#container.login #login form fieldset.name.show {
+  max-height: 300px;
+}
+section#container.login #login form fieldset label {
+  display: block;
+  padding: 5px 0;
+}
+section#container.login #login form fieldset input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #000000;
+}
+section#container.login #login form fieldset input#submit {
+  width: auto;
+  float: right;
+  border: none;
+  background-color: #7cb0a9;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+section#container.login #login form fieldset input#submit:hover {
+  background-color: #000000;
+}
+section#container.login #login .register {
+  color: black;
 }

@@ -1,0 +1,88 @@
+.async_data.type_list_single {}
+.async_data.type_list_single h2 {
+    border-bottom: 2px solid rgba(45,45,45,1);
+    margin-bottom: 20px;
+}
+.async_data.type_list_single h3 {
+    border-bottom: 2px solid rgba(45,45,45,1);
+    margin-bottom: 20px;
+}
+
+.async_data.type_list_single ul.list {
+    list-style: none;
+}
+
+.async_data.type_list_single ul.list li.row {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(45, 45, 45,0.1);
+}
+.async_data.type_list_single ul.list li.row:last-child {
+    border-bottom: none;
+}
+
+.async_data.type_list_single ul.list li.row.header {
+    border-bottom: 1px solid rgba(45, 45, 45, 0.8);
+}
+.async_data.type_list_single ul.list li.row .column {
+    flex: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.async_data.type_list_single ul.list li.row .column.id {
+
+}
+.async_data.type_list_single ul.list li.row .column.name {
+
+}
+.async_data.type_list_single ul.list li.row .column.value {
+
+}
+.async_data.type_list_single ul.list li.row .column.time {
+
+}
+.async_data.type_list_single ul.list li.row .column.synced {
+
+}
+.async_data.type_list_single ul.list li.row .column.menu button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    border: none;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    background-color: rgba(50,50,50,1);
+}
+
+.async_data.type_list_single ul.list li.row .column.menu button.sync {
+    width: 16px;
+    height: 16px;
+
+    -webkit-box-shadow: inset 0 0 5px rgba(30,30,30,0.5);
+    -moz-box-shadow: inset 0 0 5px rgba(30,30,30,0.5);
+    box-shadow: inset 0 0 5px rgba(30,30,30,0.5);
+
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+.async_data.type_list_single ul.list li.row.synced .column.menu button.sync {
+    background-color: #009900;
+}
+.async_data.type_list_single ul.list li.row.not_synced .column.menu button.sync {
+    background-color: #990000;
+}

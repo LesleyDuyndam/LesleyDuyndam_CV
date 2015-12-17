@@ -86,35 +86,29 @@
         scrollTop: parent.offset().top
       }, 150)
 
-
-
-
-
-
-# Give the data for the animated donut charts
-  labels = [
-    { text: 'HTML5', value: 90 },
-    { text: 'CSS', value: 85 },
-    { text: 'JavaScript', value: 83 },
-    { text: 'Illustrator', value: 80 },
-    { text: 'CoffeeScript', value: 75 },
-    { text: 'jQuery', value: 70 },
-    { text: 'Wordpress', value: 65 },
-    { text: 'AngularJS', value: 45 },
-    { text: 'NodeJS', value: 40 }
-  ]
+  @labels = []
   @charts = []
+
+  @label_elements = $('#chart-wrapper .wrapper');
+
+  for element in @label_elements
+    @labels.push(
+      element : $(element)[0]
+      text    : $(element).attr('data-name')
+      value   : parseInt($(element).attr('data-value'))
+    )
 
 # Only animate chart, if device is NOT mobile
   if( device.mobile() )
-    for label in labels
+
+    for label in @labels
       @charts.push( new root.CHART( 'chart-wrapper', label, {
         stroke    : 5
         ringColor : 'rgba(68, 63, 53, 1)'
       }))
       
   else
-    for label in labels
+    for label in @labels
       @charts.push( new root.CHART( 'chart-wrapper', label, {
         animate   : true
         speed     : 2
